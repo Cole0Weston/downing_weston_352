@@ -643,8 +643,14 @@ The popular table-top game, Dungeons \& Dragons®, is very complex and requires 
 % \fnbelowfloat command of the stfloats package.
 
 \subsection{Background}
+
 A table-top adventure game, such as Dungeons \& Dragons®, is played using a large quantity of paper. Every player has a \textit{character sheet} containing information about a player's character, an \textit{inventory sheet} containing information about a character's inventory and equipment, and a \textit{spell sheet} containing the list of spells and abilities each character has access to. A player must also use paper to make story notes and record enemy positions during \textit{encounters} (fights). There are many different classes and races that players must choose from when making their character. Because of this, the skills and inventories of every player is uniquely constructed. 
 The decision to create a new character management application was born from our shared annoyance with the time-consuming tediousness of sorting and sifting through stacks of paper every time we play Dungeons \& Dragons®. We found ourselves spending more time managing our characters than we did playing the game. Our program aims to make Dungeons \& Dragons® less paper dependent. 
+\begin{figure}[h!]
+\includegraphics[scale=.15]{chrSheet.jpg}
+\caption{Blank Character Sheet}
+\label{CharacterSheet}
+\end{figure}
 
 \subsection{Challenges}
 \begin{itemize}[leftmargin=*]
@@ -664,7 +670,7 @@ The functional and non-functional requirements for this program are listed below
 
 \subsubsection{Functional}
 \begin{itemize}
-\item User must be able to input and keep track of all relevant information present on standard D\&D® 5e character sheets.
+\item User must be able to input and keep track of all relevant information present on standard D\&D® 5e character sheets \ref{CharacterSheet}.
 \item Program must properly manage player characters' inventories e.g. item weight, weapon statistics, and item value.
 \item Program must be able to write character sheet info to disk and subsequently load from such files.
 \item User must be able to create items following certain templates -- customizable gear is a staple of D\&D®.
@@ -672,7 +678,7 @@ The functional and non-functional requirements for this program are listed below
 
 \subsubsection{Non-Functional}
 \begin{itemize}
-\item Program should reliably save user data in the event of an unexpected failure.
+\item Program should reliably load all open files from previous save state.
 \item Program should be able to concurrently manage at least 10 character sheets (for assistance in managing an entire party of player characters).
 
 \end{itemize}
@@ -686,7 +692,7 @@ The functional and non-functional requirements for this program are listed below
 
 \subsection{Use Cases}
 
-\begin{table}
+\begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -760,10 +766,11 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 
 \subsection{Interface Mockups}
-At first, this will largely be completely made up, as you get further along in your project, and closer to a final product, this will typically become simple screenshots of your running application.
-
-In this subsection, you will be showing what the screen should look like as the user moves through various use cases (make sure to tie the interface mockups back to the specific use cases they illustrate).
-
+\begin{figure}[h]
+\includegraphics[scale=.4]{interface-mockup.png}
+\caption{Potential Interface}
+\label{CharacterSheetPage}
+\end{figure}
 
 
 \section{Project Timeline}
