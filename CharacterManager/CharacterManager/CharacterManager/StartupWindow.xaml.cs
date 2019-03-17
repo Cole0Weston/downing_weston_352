@@ -19,21 +19,25 @@ namespace CharacterManager
     /// </summary>
     public partial class StartupWindow : Window
     {
+        Character[] characterList;
+
         public StartupWindow()
         {
+            characterList = new Character[10];
             InitializeComponent();
         }
 
         private void CreateNew_Click(object sender, RoutedEventArgs e)
         {
-            Window newWindow = new MainWindow();
+            characterList[0] = new Character();
+            Window newWindow = new MainWindow(characterList);
             newWindow.Show();
             this.Close();
         }
 
         private void LoadExisting_Click(object sender, RoutedEventArgs e)
         {
-            Window newWindow = new MainWindow();
+            Window newWindow = new MainWindow(characterList);
             newWindow.Show();
             this.Close();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterManager
 {
-    class Character
+    public class Character
     {
         //Abilities are indexed by name: abilities["Strength"]
         private Dictionary<String, Ability> abilities;

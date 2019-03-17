@@ -20,7 +20,7 @@ namespace CharacterManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(Character[] charList)
         {
             InitializeComponent();
         }
