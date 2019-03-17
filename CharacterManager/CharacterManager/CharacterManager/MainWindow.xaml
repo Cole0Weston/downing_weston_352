@@ -5,8 +5,128 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="539.496" Width="965.126">
+    <Grid Background="#FF574946">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="142" Margin="776,40,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="142"/>
+        <Grid HorizontalAlignment="Left" Height="321" Margin="10,20,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="437">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="123" Margin="10,10,10,40" Stroke="#FF6C605E" VerticalAlignment="Top" Width="125"/>
+            <Label Content="Strength" HorizontalAlignment="Center" Margin="0,-15,0,0" VerticalAlignment="Top" Foreground="#FFD6D2D1" FontWeight="Bold" FontSize="16"/>
+            <Grid HorizontalAlignment="Center" Height="125" Margin="0,10,0,0" VerticalAlignment="Top" Width="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="StrValue" Content="10" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="62" Grid.ColumnSpan="2"/>
+                <Button Content="&lt;" Tag="Strength" HorizontalAlignment="Right" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Click="Click_DecrementAbility"/>
+                <Button Content="&gt;" Tag="Strength" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Grid.Column="1" Click="Click_IncrementAbility"/>
+                <Label x:Name="StrBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+
+
+            <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="123" Margin="10,10,10,40" Stroke="#FF6C605E" VerticalAlignment="Top" Width="125" Grid.Row="0" Grid.Column="1"/>
+            <Label x:Name="DexLabel" Content="Dexterity" HorizontalAlignment="Center" Margin="0,-15,0,0" VerticalAlignment="Top" Foreground="#FFD6D2D1" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="1"/>
+            <Grid HorizontalAlignment="Center" Height="125" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="DexValue" Content="10" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="62" Grid.ColumnSpan="2"/>
+                <Button Content="&lt;" Tag="Dexterity" HorizontalAlignment="Right" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Click="Click_DecrementAbility"/>
+                <Button Content="&gt;" Tag="Dexterity" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Grid.Column="1" Click="Click_IncrementAbility"/>
+                <Label x:Name="DexBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="123" Margin="10,10,10,40" Stroke="#FF6C605E" VerticalAlignment="Top" Width="125" Grid.Row="0" Grid.Column="2"/>
+            <Label Content="Constitution" HorizontalAlignment="Center" Margin="0,-15,0,0" VerticalAlignment="Top" Foreground="#FFD6D2D1" FontWeight="Bold" FontSize="16" Grid.Row="0" Grid.Column="2"/>
+            <Grid HorizontalAlignment="Center" Height="125" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="ConValue" Content="10" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="62" Grid.ColumnSpan="2"/>
+                <Button Content="&lt;" Tag="Constitution" HorizontalAlignment="Right" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Click="Click_DecrementAbility"/>
+                <Button Content="&gt;" Tag="Constitution" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Grid.Column="1" Click="Click_IncrementAbility"/>
+                <Label x:Name="ConBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="123" Margin="10,10,10,10" Stroke="#FF6C605E" VerticalAlignment="Top" Width="125" Grid.Row="1" Grid.Column="0"/>
+            <Label Content="Intelligence" HorizontalAlignment="Center" Margin="0,-15,0,0" VerticalAlignment="Top" Foreground="#FFD6D2D1" FontWeight="Bold" FontSize="16" Grid.Row="1" Grid.Column="0"/>
+            <Grid HorizontalAlignment="Center" Height="125" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="IntValue" Content="10" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="62" Grid.ColumnSpan="2"/>
+                <Button Content="&lt;" Tag="Intelligence" HorizontalAlignment="Right" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Click="Click_DecrementAbility"/>
+                <Button Content="&gt;" Tag="Intelligence" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Grid.Column="1" Click="Click_IncrementAbility"/>
+                <Label x:Name="IntBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="123" Margin="10,10,10,10" Stroke="#FF6C605E" VerticalAlignment="Top" Width="125" Grid.Row="1" Grid.Column="1"/>
+            <Label Content="Charisma" HorizontalAlignment="Center" Margin="0,-15,0,0" VerticalAlignment="Top" Foreground="#FFD6D2D1" FontWeight="Bold" FontSize="16" Grid.Row="1" Grid.Column="1"/>
+            <Grid HorizontalAlignment="Center" Height="125" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="ChrValue" Content="10" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="62" Grid.ColumnSpan="2"/>
+                <Button Content="&lt;" Tag="Charisma" HorizontalAlignment="Right" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Click="Click_DecrementAbility"/>
+                <Button Content="&gt;" Tag="Charisma" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Grid.Column="1" Click="Click_IncrementAbility"/>
+                <Label x:Name="ChrBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="123" Margin="10,10,10,10" Stroke="#FF6C605E" VerticalAlignment="Top" Width="125" Grid.Row="1" Grid.Column="2"/>
+            <Label Content="Wisdom" HorizontalAlignment="Center" Margin="0,-15,0,0" VerticalAlignment="Top" Foreground="#FFD6D2D1" FontWeight="Bold" FontSize="16" Grid.Row="1" Grid.Column="2"/>
+            <Grid HorizontalAlignment="Center" Height="125" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="WisValue" Content="10" HorizontalAlignment="Center" Margin="0,0" VerticalAlignment="Top" FontSize="48" Height="71" Width="62" Grid.ColumnSpan="2"/>
+                <Button Content="&lt;" Tag="Wisdom" HorizontalAlignment="Right" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Click="Click_DecrementAbility"/>
+                <Button Content="&gt;" Tag="Wisdom" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" Width="20" Height="20" Grid.Row="1" Grid.Column="1" Click="Click_IncrementAbility"/>
+                <Label x:Name="WisBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Grid>
+
+
+
     </Grid>
 </Window>

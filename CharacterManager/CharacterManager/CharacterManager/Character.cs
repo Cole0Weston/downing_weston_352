@@ -44,6 +44,21 @@ namespace CharacterManager
             pObservers.Add(po);
         }
 
+        public void setAbilityScore(string ability, int val)
+        {
+            abilities[ability].setScore(val);
+        }
+
+        public int getAbilityScore(string ability)
+        {
+            return abilities[ability].getScore();
+        }
+
+        public int getAbilityBonus(string ability)
+        {
+            return abilities[ability].getBonus();
+        }
+
         private void initializeAbilities()
         {
             abilities.Add("Strength", new Ability(10));
