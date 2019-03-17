@@ -8,11 +8,24 @@ namespace CharacterManager
 {
     class Character
     {
+        //Abilities are indexed by name: abilities["Strength"]
         private Dictionary<String, Ability> abilities;
+        //Skills are also indexed by name: skills["Athletics"]
         private Dictionary<String, Skill> skills;
 
         private List<ProficiencyObserver> pObservers;
         private int proficiencyBonus;
+
+        public Character()
+        {
+            abilities = new Dictionary<string, Ability>();
+            skills = new Dictionary<string, Skill>();
+            pObservers = new List<ProficiencyObserver>();
+            proficiencyBonus = 2;
+
+            initializeAbilities();
+            initializeSkills();
+        }
 
         public void setProficiencyBonus(int value)
         {
@@ -30,6 +43,80 @@ namespace CharacterManager
         {
             pObservers.Add(po);
         }
+
+        private void initializeAbilities()
+        {
+            abilities.Add("Strength", new Ability(10));
+            abilities.Add("Dexterity", new Ability(10));
+            abilities.Add("Constitution", new Ability(10));
+            abilities.Add("Intelligence", new Ability(10));
+            abilities.Add("Charisma", new Ability(10));
+            abilities.Add("Wisdom", new Ability(10));
+        }
+
+        //There is probably a much shorter way to initialize all of these, but this seems semi-sensible.
+        private void initializeSkills()
+        {
+            //STRENGTH SKILLS
+            skills.Add("Athletics", new Skill());
+            abilities["Strength"].registerObserver(skills["Athletics"]);
+            registerObserver(skills["Athletics"]);
+            //DEXTERITY SKILLS
+            skills.Add("Acrobatics", new Skill());
+            skills.Add("Sleight of Hand", new Skill());
+            skills.Add("Stealth", new Skill());
+            abilities["Dexterity"].registerObserver(skills["Acrobatics"]);
+            abilities["Dexterity"].registerObserver(skills["Sleight of Hand"]);
+            abilities["Dexterity"].registerObserver(skills["Stealth"]);
+            registerObserver(skills["Acrobatics"]);
+            registerObserver(skills["Sleight of Hand"]);
+            registerObserver(skills["Stealth"]);
+            //INTELLIGENCE SKILLS
+            skills.Add("Arcana", new Skill());
+            skills.Add("History", new Skill());
+            skills.Add("Investigation", new Skill());
+            skills.Add("Nature", new Skill());
+            skills.Add("Religion", new Skill());
+            abilities["Intelligence"].registerObserver(skills["Arcana"]);
+            abilities["Intelligence"].registerObserver(skills["History"]);
+            abilities["Intelligence"].registerObserver(skills["Investigation"]);
+            abilities["Intelligence"].registerObserver(skills["Nature"]);
+            abilities["Intelligence"].registerObserver(skills["Religion"]);
+            registerObserver(skills["Arcana"]);
+            registerObserver(skills["History"]);
+            registerObserver(skills["Investigation"]);
+            registerObserver(skills["Nature"]);
+            registerObserver(skills["Religion"]);
+            //WISDOM SKILLS
+            skills.Add("Animal Handling", new Skill());
+            skills.Add("Insight", new Skill());
+            skills.Add("Medicine", new Skill());
+            skills.Add("Perception", new Skill());
+            skills.Add("Survival", new Skill());
+            abilities["Wisdom"].registerObserver(skills["Animal Handling"]);
+            abilities["Wisdom"].registerObserver(skills["Insight"]);
+            abilities["Wisdom"].registerObserver(skills["Medicine"]);
+            abilities["Wisdom"].registerObserver(skills["Perception"]);
+            abilities["Wisdom"].registerObserver(skills["Survival"]);
+            registerObserver(skills["Animal Handling"]);
+            registerObserver(skills["Insight"]);
+            registerObserver(skills["Medicine"]);
+            registerObserver(skills["Perception"]);
+            registerObserver(skills["Survival"]);
+            //CHARISMA SKILLS
+            skills.Add("Deception", new Skill());
+            skills.Add("Intimidation", new Skill());
+            skills.Add("Performance", new Skill());
+            skills.Add("Persuasion", new Skill());
+            abilities["Charisma"].registerObserver(skills["Deception"]);
+            abilities["Charisma"].registerObserver(skills["Intimidation"]);
+            abilities["Charisma"].registerObserver(skills["Performance"]);
+            abilities["Charisma"].registerObserver(skills["Persuasion"]);
+            registerObserver(skills["Deception"]);
+            registerObserver(skills["Intimidation"]);
+            registerObserver(skills["Performance"]);
+            registerObserver(skills["Persuasion"]);
+        }
     }
 
     class Ability
@@ -37,6 +124,12 @@ namespace CharacterManager
         private List<AbilityObserver> observers;
         private int score;
         private int bonus;
+
+        public Ability(int s)
+        {
+            observers = new List<AbilityObserver>();
+            setScore(s);
+        }
 
         public void setScore(int value)
         {
@@ -96,6 +189,13 @@ namespace CharacterManager
             pBonus = proficiency;
             value = aBonus;
             if (isProficient) { value += pBonus; }
+        }
+
+        public void setProficiency(bool isProf)
+        {
+            isProficient = isProf;
+            if (isProficient) { value = aBonus + pBonus; }
+            else { value = aBonus; }
         }
     }
 }
