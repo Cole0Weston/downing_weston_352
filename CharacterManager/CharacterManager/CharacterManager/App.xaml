@@ -1,8 +1,8 @@
-﻿<Application x:Class="placeholder.App"
+﻿<Application x:Class="CharacterManager.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:placeholder"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:CharacterManager"
+             StartupUri="StartupWindow.xaml">
     <Application.Resources>
          
     </Application.Resources>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace placeholder.Properties
+namespace CharacterManager.Properties
 {
 
 
