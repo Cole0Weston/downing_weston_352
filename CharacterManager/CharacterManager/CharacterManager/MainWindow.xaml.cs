@@ -74,5 +74,38 @@ namespace CharacterManager
             ChrValue.Content = curCharacter.getAbilityScore("Charisma");
             WisValue.Content = curCharacter.getAbilityScore("Wisdom");
         }
+
+        private void NameText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            curCharacter.name = ((TextBox)sender).Text;
+        }
+
+        private void ClassText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            curCharacter.charClass = ((TextBox)sender).Text;
+        }
+
+        private void RaceText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            curCharacter.charClass = ((TextBox)sender).Text;
+        }
+
+        private void AlignmentText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            curCharacter.charClass = ((TextBox)sender).Text;
+        }
+
+        private void LevelText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if (int.TryParse(text, out int value))
+            {
+                if(value > 0 && value < 100)
+                {
+                    curCharacter.level = value;
+                }
+            }
+            ((TextBox)sender).Text = curCharacter.level.ToString();
+        }
     }
 }

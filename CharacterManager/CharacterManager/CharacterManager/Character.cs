@@ -16,6 +16,11 @@ namespace CharacterManager
         private List<ProficiencyObserver> pObservers;
         private int proficiencyBonus;
 
+        public int level;
+        public string name;
+        public string charClass;
+        public string race;
+
         public Character()
         {
             abilities = new Dictionary<string, Ability>();
