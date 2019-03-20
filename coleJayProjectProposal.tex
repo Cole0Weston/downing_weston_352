@@ -714,41 +714,38 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \begin{itemize}
 \item[Use Case Number:] 1
 \item[Use Case Name:] Create a new character
-\item[Description:] User has opened the program and needs to create a new character sheet. They will click ``File" in the toolbar followed by ``New" from the drop-down list. This will create a blank character sheet.
+\item[Description:] User has opened the program and needs to create a new character sheet. They will click the ``Create New Character" option upon opening the program. This will create a blank character sheet.
 \end{itemize}
 
 \begin{enumerate}
 \item User opens a new instance of the program.
-\item User left-clicks on ``File" button in toolbar.
-\item User left-clicks on ``New" option from the drop-down list.
-\item A new tab is created containing a blank character sheet.
+\item User left-clicks on ``Create New Character" option from the startup window.
+\item A new tab is created containing a blank character sheet, and the main window is opened.
 \item[Termination Outcome:] The user now has a blank character sheet instance opened in a new tab.
 \end{enumerate}
 
 \begin{itemize}
 \item[Use Case Number:] 2
 \item[Use Case Name:] Edit existing character
-\item[Description:] User has opened the program and needs to edit an existing character sheet. They will click ``File" in the toolbar followed by ``Open" from the drop-down list. This should open an existing character sheet from disk in a new tab. 
+\item[Description:] User has opened the program and needs to edit an existing character sheet. They will click the ``Load Existing Character" option upon opening the program. This should open an existing character sheet from disk in a new tab. 
 \end{itemize}
 
 \begin{enumerate}
 \item User opens a new instance of the program.
-\item User left-clicks on ``File" button in toolbar.
-\item User left-clicks on ``Open" option from the drop-down list.
-\item A new tab is created containing the character sheet.
+\item User left-clicks on ``Load Existing Character" option from the startup window.
+\item A new tab is created containing the character sheet, and the main window is opened.
 \item[Termination Outcome:] The user has now opened an existing character sheet instance in a new tab and is ready to begin editing.
 \end{enumerate}
 
 \begin{itemize}
 \item[Use Case Number:] 3
 \item[Use Case Name:] Save the current character
-\item[Description:] User has a character sheet open in a tab. They will click ``File" in the toolbar followed by ``Save" from the drop-down list. This will save the current character sheet to disk, prompting if the file has not yet been saved.
+\item[Description:] User has a character sheet open in a tab. They will click the save icon in the main window. This will save the current character sheet to disk, prompting if the file has not yet been saved.
 \end{itemize}
 
 \begin{enumerate}
 \item User has a previously saved character sheet open.
-\item User left-clicks on ``File" button in toolbar.
-\item User left-clicks on ``Save" option from the drop-down list.
+\item User left-clicks on the save icon in the main window.
 \item[Termination Outcome:] The file on disk has been overwritten with new character sheet data.
 \end{enumerate}
 \begin{itemize}
@@ -756,8 +753,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \end{itemize}
 \begin{enumerate}
 \item User has an unsaved character sheet open.
-\item User left-clicks on ``File" button in toolbar.
-\item User left-clicks on ``Save" option from the drop-down list.
+\item User left-clicks on the save icon in the main window.
 \item User is prompted to choose a save directory and file name.
 \item[Termination Outcome:] The file has been saved to disk.
 \end{enumerate}
@@ -777,7 +773,9 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
 
 \section{Project Structure}
-At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
+The structure of the project centers around a list of Character objects (one of which is active at any given time), to be passed between the various Windows of the program. Each individual Character object contains all information which would be maintained within a standard D\&D 5e character sheet - most importantly a list of ability scores, skill values, inventory items, and spells. Logic for the calculation of many of these items is contained within the Character class, and the main purpose of each Window is to display these attributes in an easily digestable form.\\
+For example, ability bonuses and skill values will not be directly accessible by the end user, but rather are internally maintained and calculated by the logic within the Character class (using the pertinent logic from the Player's Handbook which would generally be calculated by hand.)\\
+Several fields (e.g. Feats, Abilities, etc.) will simply be text fields with arbitrary contents, to be freely edited by the end user. This is to allow for the greatest degree of flexibility in using the character manager - facets of D\&D such as these are often not cut-and-dry enough to easily facilitate a better method of organization.\\
 
 \subsection{UML Outline}
 \texttt{
