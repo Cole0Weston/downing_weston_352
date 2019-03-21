@@ -373,7 +373,7 @@
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
-
+\usepackage{float}
 
 \begin{document}
 %
@@ -770,7 +770,33 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 
 \section{Project Timeline}
-Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|p{1.5in}|p{2.7in}|}
+\hline
+Week & Date & Checkpoint & Plan to Meet Checkpoint \\
+\hline \hline
+3 & 2/4/19 & Project proposal drafted & Project will be named. We will draft an abstract, an introduction, and a scope.\\
+\hline
+6 & 2/21/19 & Project proposal update & Proposal will have atleast 3 use cases, functional and non functional requirements, and interface mockups.\\
+\hline
+7 & 2/26/19 & Project proposal presentation & We will have prepared project interface mockups and graphics necessary to pitch our project proposal \\
+\hline
+10 & 3/10/19 & Working demo must compile & Project mockup must be finalized for program to be designed around. \\
+\hline
+11 & 3/21/19 & Project Update and Demo Day & Project Timeline, Structure, and UML outline must be prepared, and program must be presented. \\
+\hline
+14 & 4/7/19 & Save and Load character functions completion & Project should be able to load and save character information. This should be a simple read/write from/to file. \\ 
+\hline
+16 & 4/25/19 & Project completion & Project must be completed by this date. That means that program must be be able to, at minimum, create and load character sheets successfully. Program will be able to edit spells and attributes.  \\
+
+\hline
+\end{tabular}
+\caption{Timeline}
+\label{tab:useCaseIndex}
+\end{table}
+
 
 \section{Project Structure}
 The structure of the project centers around a list of Character objects (one of which is active at any given time), to be passed between the various Windows of the program. Each individual Character object contains all information which would be maintained within a standard D\&D 5e character sheet - most importantly a list of ability scores, skill values, inventory items, and spells. Logic for the calculation of many of these items is contained within the Character class, and the main purpose of each Window is to display these attributes in an easily digestable form.\\
@@ -779,8 +805,8 @@ Several fields (e.g. Feats, Abilities, etc.) will simply be text fields with arb
 
 \subsection{UML Outline}
 \texttt{
-\begin{figure}[h!]
-\includegraphics[scale=.4]{ProjectUML.png}
+\begin{figure}[H]
+\includegraphics[scale=.33]{ProjectUML.png}
 \caption{Project UML}
 \label{CharacterSheet}
 \end{figure}
@@ -788,7 +814,7 @@ Several fields (e.g. Feats, Abilities, etc.) will simply be text fields with arb
 
 
 \subsection{Design Patterns Used}
-Observer - Both the ProficiencyObserver and AbilityObserver classes are implementations of the Observer pattern, used to keep ability bonuses, skill values, and so forth in sync.
+Observer - Both the ProficiencyObserver and AbilityObserver classes are implementations of the Observer pattern, and are used to keep ability bonuses, skill values, and so forth in sync.
 
 \section{Results}
 This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
