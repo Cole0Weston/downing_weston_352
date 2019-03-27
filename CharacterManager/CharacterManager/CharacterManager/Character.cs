@@ -38,17 +38,15 @@ namespace CharacterManager
             armorClass = 10;
             currentHP = 5;
             maxHP = 10;
+            perception = 0;
 
             initializeAbilities();
             initializeSkills();
         }
 
-        public void setProficiencyBonus(int value)
+        public void updateProficiencyBonus()
         {
-            if(value >= 0)
-            {
-                proficiencyBonus = value;
-            }
+            proficiencyBonus = ((level - 1) / 4) + 2;
             foreach(ProficiencyObserver po in pObservers)
             {
                 po.UpdateP(proficiencyBonus);
@@ -82,6 +80,11 @@ namespace CharacterManager
         public int getPerception()
         {
             return perception;
+        }
+
+        public int getProficiencyBonus()
+        {
+            return proficiencyBonus;
         }
 
         private void initializeAbilities()

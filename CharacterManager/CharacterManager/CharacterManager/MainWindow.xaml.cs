@@ -35,7 +35,7 @@ namespace CharacterManager
         {
             string ability = ((Button)sender).Tag.ToString();
             int val = curCharacter.getAbilityScore(ability);
-            if (val < 30)
+            if (val <= 30)
             {
                 curCharacter.setAbilityScore(ability.ToString(), val + 1);
             }
@@ -107,6 +107,13 @@ namespace CharacterManager
                 }
             }
             ((TextBox)sender).Text = curCharacter.level.ToString();
+            curCharacter.updateProficiencyBonus();
+
+            //Null check is needed here because it will attempt to update the box before it is initialized.
+            if(ProficiencyBox != null)
+            {
+                ProficiencyBox.Text = "+" + Convert.ToString(curCharacter.getProficiencyBonus());
+            }
         }
 
         private void MaxHPBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -127,12 +134,29 @@ namespace CharacterManager
             string text = ((TextBox)sender).Text;
             if (int.TryParse(text, out int value))
             {
-                if (value > 0 && value <= curCharacter.maxHP)
-                {
-                    curCharacter.currentHP = value;
-                }
+                curCharacter.currentHP = value;
             }
             ((TextBox)sender).Text = curCharacter.currentHP.ToString();
+        }
+
+        private void SpeedBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if (int.TryParse(text, out int value))
+            {
+                curCharacter.speed = value;
+            }
+            ((TextBox)sender).Text = curCharacter.speed.ToString();
+        }
+
+        private void ArmorBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if (int.TryParse(text, out int value))
+            {
+                curCharacter.armorClass = value;
+            }
+            ((TextBox)sender).Text = curCharacter.armorClass.ToString();
         }
     }
 }
