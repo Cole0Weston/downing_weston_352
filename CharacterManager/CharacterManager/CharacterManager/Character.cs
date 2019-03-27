@@ -15,8 +15,14 @@ namespace CharacterManager
 
         private List<ProficiencyObserver> pObservers;
         private int proficiencyBonus;
+        private int perception;
 
         public int level;
+        public int speed;
+        public int armorClass;
+        public int currentHP;
+        public int maxHP;
+
         public string name;
         public string charClass;
         public string race;
@@ -27,6 +33,11 @@ namespace CharacterManager
             skills = new Dictionary<string, Skill>();
             pObservers = new List<ProficiencyObserver>();
             proficiencyBonus = 2;
+            level = 1;
+            speed = 30;
+            armorClass = 10;
+            currentHP = 5;
+            maxHP = 10;
 
             initializeAbilities();
             initializeSkills();
@@ -52,6 +63,10 @@ namespace CharacterManager
         public void setAbilityScore(string ability, int val)
         {
             abilities[ability].setScore(val);
+            if(ability == "Wisdom")
+            {
+                perception = 10 + getAbilityBonus("Wisdom");
+            }
         }
 
         public int getAbilityScore(string ability)
@@ -62,6 +77,11 @@ namespace CharacterManager
         public int getAbilityBonus(string ability)
         {
             return abilities[ability].getBonus();
+        }
+
+        public int getPerception()
+        {
+            return perception;
         }
 
         private void initializeAbilities()

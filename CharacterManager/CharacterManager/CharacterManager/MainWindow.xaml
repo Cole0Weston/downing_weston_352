@@ -133,6 +133,29 @@
         </Grid>
         <Ellipse Fill="#FFE8E1DF" HorizontalAlignment="Left" Height="77" Margin="870,10,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="77"/>
         <TextBox x:Name="LevelText" HorizontalAlignment="Left" Height="69" Margin="870,18,0,0" Grid.RowSpan="2" Text="1" VerticalAlignment="Top" Width="77" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" TextChanged="LevelText_TextChanged"/>
+        <Grid Height="118" Margin="465,207,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="468">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="94*"/>
+                <ColumnDefinition Width="110*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" Stroke="Black" VerticalAlignment="Top" Width="78"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="69" Margin="0,0" Stroke="Black" VerticalAlignment="Top" Width="70"/>
+            <TextBlock x:Name="PerceptionBox" HorizontalAlignment="Center" Margin="0,71,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Height="33" Width="78" FontSize="24" TextAlignment="Center"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" Stroke="Black" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="69" Margin="0,0" Stroke="Black" VerticalAlignment="Top" Width="70" Grid.Column="1"/>
+            <TextBlock x:Name="ProficiencyBox" HorizontalAlignment="Center" Margin="0,71,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Height="33" Width="78" FontSize="24" TextAlignment="Center" Grid.Column="1"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="69" Margin="0,0" Stroke="Black" VerticalAlignment="Top" Width="69" Grid.Column="2"/>
+            <TextBox x:Name="SpeedBox" Grid.Column="2" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="79" TextAlignment="Center" FontSize="24"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="69" Margin="0,0" Stroke="Black" VerticalAlignment="Top" Width="68" Grid.Column="3"/>
+            <TextBox x:Name="ArmorBox" Grid.Column="3" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="80" TextAlignment="Center" FontSize="24"/>
+            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="80" Margin="0,-20,0,0" Stroke="Black" VerticalAlignment="Top" Width="80" Grid.Column="5"/>
+            <TextBox x:Name="MaxHPBox" Grid.Column="5" HorizontalAlignment="Center" Height="35" Margin="50,63,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="MaxHPBox_TextChanged"/>
+            <TextBox x:Name="CurrentHPBox" Grid.Column="5" HorizontalAlignment="Center" Height="35" Margin="-50,63,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="CurrentHPBox_TextChanged"/>
+
+        </Grid>
 
 
 

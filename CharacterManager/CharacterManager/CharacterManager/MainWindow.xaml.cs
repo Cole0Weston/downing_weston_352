@@ -63,6 +63,7 @@ namespace CharacterManager
             IntBonus.Content = curCharacter.getAbilityBonus("Intelligence");
             ChrBonus.Content = curCharacter.getAbilityBonus("Charisma");
             WisBonus.Content = curCharacter.getAbilityBonus("Wisdom");
+            PerceptionBox.Text = Convert.ToString(curCharacter.getPerception());
         }
 
         private void UpdateAbilityScores()
@@ -106,6 +107,32 @@ namespace CharacterManager
                 }
             }
             ((TextBox)sender).Text = curCharacter.level.ToString();
+        }
+
+        private void MaxHPBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if (int.TryParse(text, out int value))
+            {
+                if (value > 0 && value < 1000)
+                {
+                    curCharacter.maxHP = value;
+                }
+            }
+            ((TextBox)sender).Text = curCharacter.maxHP.ToString();
+        }
+
+        private void CurrentHPBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if (int.TryParse(text, out int value))
+            {
+                if (value > 0 && value <= curCharacter.maxHP)
+                {
+                    curCharacter.currentHP = value;
+                }
+            }
+            ((TextBox)sender).Text = curCharacter.currentHP.ToString();
         }
     }
 }
