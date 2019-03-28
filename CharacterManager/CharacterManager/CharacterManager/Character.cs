@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace CharacterManager
 {
+    //Interface for objects which must track a particular ability score.
     public interface AbilityObserver
     {
         void UpdateA(int bonus);
     }
 
+    //Interface for objects which must track a character's proficiency bonus.
     public interface ProficiencyObserver
     {
         void UpdateP(int proficiency);
@@ -24,9 +26,10 @@ namespace CharacterManager
         private Dictionary<String, Skill> skills;
 
         private List<ProficiencyObserver> pObservers;
-        private int proficiencyBonus;
-        private int perception;
+        private int proficiencyBonus; // ((level - 1) / 4) + 2
+        private int perception; // 10 + Wisdom bonus.
 
+        //All public values below are determined arbitrarily by the user.
         public int level;
         public int speed;
         public int armorClass;
@@ -54,6 +57,7 @@ namespace CharacterManager
             initializeSkills();
         }
 
+        // Should be called each time level is changed (perhaps implement a setLevel method instead.)
         public void updateProficiencyBonus()
         {
             proficiencyBonus = ((level - 1) / 4) + 2;
@@ -68,6 +72,7 @@ namespace CharacterManager
             pObservers.Add(po);
         }
 
+        //Updates an ability score by name (also updates perception if the ability is Wisdom.)
         public void setAbilityScore(string ability, int val)
         {
             abilities[ability].setScore(val);
@@ -77,6 +82,7 @@ namespace CharacterManager
             }
         }
 
+        // GETTERS
         public int getAbilityScore(string ability)
         {
             return abilities[ability].getScore();
@@ -96,7 +102,9 @@ namespace CharacterManager
         {
             return proficiencyBonus;
         }
+        //END GETTERS
 
+        //Initializes all abilities with default value (10).
         private void initializeAbilities()
         {
             abilities.Add("Strength", new Ability(10));
@@ -107,6 +115,7 @@ namespace CharacterManager
             abilities.Add("Wisdom", new Ability(10));
         }
 
+        //Initializes all skills and links them to their corresponding ability score.
         //There is probably a much shorter way to initialize all of these, but this seems semi-sensible.
         private void initializeSkills()
         {

@@ -24,6 +24,7 @@ namespace CharacterManager
         private Character[] characterList;
         private Character curCharacter;
 
+        //MainWindow constructor - opens the main window with the first character in characterList displayed.
         public MainWindow(Character[] charList)
         {
             characterList = charList;
@@ -55,6 +56,7 @@ namespace CharacterManager
             UpdateAbilityBonuses();
         }
 
+        //Called each time an ability score is changed.
         private void UpdateAbilityBonuses()
         {
             StrBonus.Content = curCharacter.getAbilityBonus("Strength");
@@ -66,6 +68,7 @@ namespace CharacterManager
             PerceptionBox.Text = Convert.ToString(curCharacter.getPerception());
         }
 
+        //Called each time an ability score is changed.
         private void UpdateAbilityScores()
         {
             StrValue.Content = curCharacter.getAbilityScore("Strength");
@@ -76,6 +79,7 @@ namespace CharacterManager
             WisValue.Content = curCharacter.getAbilityScore("Wisdom");
         }
 
+        //No processing necessary for text fields - contents are arbitrary and determined by the user.
         private void NameText_TextChanged(object sender, TextChangedEventArgs e)
         {
             curCharacter.name = ((TextBox)sender).Text;
@@ -95,7 +99,9 @@ namespace CharacterManager
         {
             curCharacter.charClass = ((TextBox)sender).Text;
         }
+        //End arbitrary text fields.
 
+        //Level text is constrained from 1-99 and the contents of LevelText must be guaranteed to be 1-99.
         private void LevelText_TextChanged(object sender, TextChangedEventArgs e)
         {
             string text = ((TextBox)sender).Text;
@@ -116,6 +122,8 @@ namespace CharacterManager
             }
         }
 
+        //MaxHP, CurrentHP, Speed, and Armor are arbitrary values, to be tracked by the user.
+        //Content of MaxHPBox, CurrentHPBox, SpeedBox, and ArmorBox are guaranteed to be integers.
         private void MaxHPBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string text = ((TextBox)sender).Text;

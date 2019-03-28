@@ -9,10 +9,11 @@ namespace CharacterManager
     class Skill : AbilityObserver, ProficiencyObserver
     {
         int value;
-        int aBonus;
-        int pBonus;
-        bool isProficient;
+        int aBonus; //Bonus from corresponding ability score.
+        int pBonus; //Bonus from character proficiency.
+        bool isProficient; //Determines whether pBonus should be added.
 
+        //Called when a character's ability scores are updated.
         public void UpdateA(int bonus)
         {
             aBonus = bonus;
@@ -20,6 +21,7 @@ namespace CharacterManager
             if (isProficient) { value += pBonus; }
         }
 
+        //Called when a character's proficiency bonus is updated.
         public void UpdateP(int proficiency)
         {
             pBonus = proficiency;

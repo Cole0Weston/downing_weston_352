@@ -8,9 +8,10 @@ namespace CharacterManager
 {
     class Ability
     {
+        //Each ability has a list of observers (e.g. skills) which update according to the current ability score.
         private List<AbilityObserver> observers;
         private int score;
-        private int bonus;
+        private int bonus; // (score - 10) / 2
 
         public Ability(int s)
         {
@@ -26,6 +27,7 @@ namespace CharacterManager
                 score = value;
             }
             setBonus(score);
+            //Update each observer.
             foreach (AbilityObserver ao in observers)
             {
                 ao.UpdateA(bonus);
