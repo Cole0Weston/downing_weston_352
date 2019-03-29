@@ -92,12 +92,12 @@ namespace CharacterManager
 
         private void RaceText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            curCharacter.charClass = ((TextBox)sender).Text;
+            curCharacter.race = ((TextBox)sender).Text;
         }
 
         private void AlignmentText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            curCharacter.charClass = ((TextBox)sender).Text;
+            curCharacter.alignment = ((TextBox)sender).Text;
         }
         //End arbitrary text fields.
 
@@ -165,6 +165,33 @@ namespace CharacterManager
                 curCharacter.armorClass = value;
             }
             ((TextBox)sender).Text = curCharacter.armorClass.ToString();
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            curCharacter.saveCharacter();
+        }
+
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+            curCharacter = new Character("Name.char");
+            UpdateFields();
+        }
+
+        private void UpdateFields()
+        {
+            UpdateAbilityScores();
+            UpdateAbilityBonuses();
+            NameText.Text = curCharacter.name;
+            ClassText.Text = curCharacter.charClass;
+            RaceText.Text = curCharacter.race;
+            AlignmentText.Text = curCharacter.alignment;
+            LevelText.Text = curCharacter.level.ToString();
+            PerceptionBox.Text = curCharacter.getPerception().ToString();
+            SpeedBox.Text = curCharacter.speed.ToString();
+            ArmorBox.Text = curCharacter.armorClass.ToString();
+            CurrentHPBox.Text = curCharacter.currentHP.ToString();
+            MaxHPBox.Text = curCharacter.maxHP.ToString();
         }
     }
 }

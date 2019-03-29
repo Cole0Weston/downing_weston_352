@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CharacterManager
 {
@@ -39,6 +40,7 @@ namespace CharacterManager
         public string name;
         public string charClass;
         public string race;
+        public string alignment;
 
         public Character()
         {
@@ -51,10 +53,71 @@ namespace CharacterManager
             armorClass = 10;
             currentHP = 5;
             maxHP = 10;
-            perception = 0;
+            perception = 10;
 
             initializeAbilities();
             initializeSkills();
+        }
+
+        public void saveCharacter()
+        {
+            string file = name + ".char";
+            FileStream fs = new FileStream(file, FileMode.Create);
+            fs.Close();
+            using (StreamWriter writer = new StreamWriter(file))
+            {
+                writer.WriteLine(name);
+                writer.WriteLine(charClass);
+                writer.WriteLine(race);
+                writer.WriteLine(alignment);
+                writer.WriteLine(level);
+                writer.WriteLine(speed);
+                writer.WriteLine(armorClass);
+                writer.WriteLine(currentHP);
+                writer.WriteLine(maxHP);
+                foreach (KeyValuePair<string, Ability> a in abilities)
+                {
+                    writer.WriteLine(a.Key + ":" + a.Value.getScore());
+                }
+                foreach (KeyValuePair<string, Skill> s in skills)
+                {
+                    writer.WriteLine(s.Key + ":" + s.Value.getProficiency());
+                }
+            }
+        }
+
+        public Character(string file)
+        {
+            abilities = new Dictionary<string, Ability>();
+            skills = new Dictionary<string, Skill>();
+            pObservers = new List<ProficiencyObserver>();
+            initializeAbilities();
+            initializeSkills();
+
+            using (StreamReader reader = new StreamReader(file))
+            {
+                name = reader.ReadLine();
+                charClass = reader.ReadLine();
+                race = reader.ReadLine();
+                alignment = reader.ReadLine();
+                level = Convert.ToInt16(reader.ReadLine());
+                speed = Convert.ToInt16(reader.ReadLine());
+                armorClass = Convert.ToInt16(reader.ReadLine());
+                currentHP = Convert.ToInt16(reader.ReadLine());
+                maxHP = Convert.ToInt16(reader.ReadLine());
+                foreach (KeyValuePair<string, Ability> a in abilities)
+                {
+                    string[] ability = reader.ReadLine().Split(':');
+                    abilities[ability[0]].setScore(Convert.ToInt16(ability[1]));
+                }
+                foreach (KeyValuePair<string, Skill> s in skills)
+                {
+                    string[] skill = reader.ReadLine().Split(':');
+                    skills[skill[0]].setProficiency(Convert.ToBoolean(skill[1]));
+                }
+            }
+
+            updatePerception();
         }
 
         // Should be called each time level is changed (perhaps implement a setLevel method instead.)
@@ -72,14 +135,16 @@ namespace CharacterManager
             pObservers.Add(po);
         }
 
-        //Updates an ability score by name (also updates perception if the ability is Wisdom.)
+        //Updates an ability score by name.
         public void setAbilityScore(string ability, int val)
         {
             abilities[ability].setScore(val);
-            if(ability == "Wisdom")
-            {
-                perception = 10 + getAbilityBonus("Wisdom");
-            }
+            updatePerception();
+        }
+
+        public void updatePerception()
+        {
+            perception = 10 + getAbilityBonus("Wisdom");
         }
 
         // GETTERS

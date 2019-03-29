@@ -35,5 +35,10 @@ namespace CharacterManager
             if (isProficient) { value = aBonus + pBonus; }
             else { value = aBonus; }
         }
+
+        public bool getProficiency()
+        {
+            return isProficient;
+        }
     }
 }
