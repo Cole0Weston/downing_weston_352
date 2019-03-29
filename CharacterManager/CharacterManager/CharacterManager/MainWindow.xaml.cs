@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.IO;
+using System.Collections;
 
 namespace CharacterManager
 {
@@ -23,15 +24,19 @@ namespace CharacterManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Character[] characterList;
+        private ArrayList characterList;
         private Character curCharacter;
 
         //MainWindow constructor - opens the main window with the first character in characterList displayed.
-        public MainWindow(Character[] charList)
+        public MainWindow(ArrayList charList)
         {
+            //This is a bit of a silly workaround - the fields will all update before our character's info is pulled.
+            //This prevents our character's name from being set to "Name", etc.
             characterList = charList;
-            curCharacter = characterList[0];
+            curCharacter = new Character();
             InitializeComponent();
+            curCharacter = (Character)characterList[0];
+            UpdateFields();
         }
 
         private void Click_IncrementAbility(object sender, RoutedEventArgs e)
