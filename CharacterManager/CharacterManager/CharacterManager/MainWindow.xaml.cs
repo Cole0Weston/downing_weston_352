@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using Microsoft.Win32;
+using System.IO;
 
 namespace CharacterManager
 {
@@ -174,7 +176,18 @@ namespace CharacterManager
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            curCharacter = new Character("Name.char");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                if (System.IO.Path.GetExtension(openFileDialog.FileName) == ".char")
+                {
+                    curCharacter = new Character(openFileDialog.FileName);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to open character file!");
+                }
+            }
             UpdateFields();
         }
 
