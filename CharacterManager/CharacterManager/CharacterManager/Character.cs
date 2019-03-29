@@ -59,9 +59,8 @@ namespace CharacterManager
             initializeSkills();
         }
 
-        public void saveCharacter()
+        public void saveCharacter(string file)
         {
-            string file = name + ".char";
             FileStream fs = new FileStream(file, FileMode.Create);
             fs.Close();
             using (StreamWriter writer = new StreamWriter(file))

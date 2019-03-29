@@ -171,23 +171,23 @@ namespace CharacterManager
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            curCharacter.saveCharacter();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Character files (*.char)|*.char";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                curCharacter.saveCharacter(saveFileDialog.FileName);
+            }
         }
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Character files (*.char)|*.char";
             if (openFileDialog.ShowDialog() == true)
             {
-                if (System.IO.Path.GetExtension(openFileDialog.FileName) == ".char")
-                {
-                    curCharacter = new Character(openFileDialog.FileName);
-                }
-                else
-                {
-                    MessageBox.Show("Failed to open character file!");
-                }
+                curCharacter = new Character(openFileDialog.FileName);
             }
+
             UpdateFields();
         }
 
