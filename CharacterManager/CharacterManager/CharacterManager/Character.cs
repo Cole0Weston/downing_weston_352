@@ -55,6 +55,11 @@ namespace CharacterManager
             maxHP = 10;
             perception = 10;
 
+            name = "Name";
+            charClass = "Class";
+            race = "Race";
+            alignment = "Alignment";
+
             initializeAbilities();
             initializeSkills();
         }
