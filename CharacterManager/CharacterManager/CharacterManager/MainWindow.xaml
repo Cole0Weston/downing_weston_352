@@ -6,12 +6,36 @@
         xmlns:local="clr-namespace:CharacterManager"
         mc:Ignorable="d"
         Title="MainWindow" Height="539.496" Width="965.126">
+    <Window.Resources>
+        <Style x:Key="invisHover" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="#FF5397D1" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF5397D1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#FF574946">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Ellipse Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="142" Margin="776,40,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="142"/>
+        <Rectangle Fill="#FFD6D2D1" HorizontalAlignment="Left" Height="103" Margin="797,50,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="105"/>
+        <Image x:Name="characterAvatar" HorizontalAlignment="Left" Height="103" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.173,0.925" Source="PlayerIcons/female/f_07.png"/>
         <Grid HorizontalAlignment="Left" Height="321" Margin="10,20,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="437">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -131,8 +155,6 @@
             <TextBox x:Name="RaceText" HorizontalAlignment="Left" Height="34" Margin="0,80,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Width="300" FontSize="20" TextChanged="RaceText_TextChanged" Background="#FFE8E1DF"/>
             <TextBox x:Name="AlignmentText" HorizontalAlignment="Left" Height="34" Margin="0,120,0,0" TextWrapping="Wrap" Text="Alignment" VerticalAlignment="Top" Width="300" FontSize="20" TextChanged="AlignmentText_TextChanged" Background="#FFE8E1DF"/>
         </Grid>
-        <Ellipse Fill="#FFE8E1DF" HorizontalAlignment="Left" Height="77" Margin="870,10,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="77"/>
-        <TextBox x:Name="LevelText" HorizontalAlignment="Left" Height="69" Margin="870,18,0,0" Grid.RowSpan="2" Text="1" VerticalAlignment="Top" Width="77" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" TextChanged="LevelText_TextChanged"/>
         <Grid Height="118" Margin="465,207,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="468">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="94*"/>
@@ -158,8 +180,12 @@
         </Grid>
         <Button Content="Save" HorizontalAlignment="Left" Margin="35,389,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="75" Height="68" Click="Save_Click"/>
         <Button Content="Load" HorizontalAlignment="Left" Margin="153,389,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="75" Height="68" Click="Load_Click"/>
-
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="103" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="Chage_Icon" Style="{StaticResource invisHover}" Content="Change Icon" HorizontalAlignment="Left" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105" Click="Chage_Icon_Click" Height="103" />
+        <Ellipse Fill="#FFE8E1DF" HorizontalAlignment="Left" Height="77" Margin="870,10,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="77"/>
+        <TextBox x:Name="LevelText" HorizontalAlignment="Left" Height="69" Margin="870,18,0,0" Grid.RowSpan="2" Text="1" VerticalAlignment="Top" Width="77" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" TextChanged="LevelText_TextChanged"/>
 
 
     </Grid>
+
 </Window>

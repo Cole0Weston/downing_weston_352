@@ -211,5 +211,20 @@ namespace CharacterManager
             CurrentHPBox.Text = curCharacter.currentHP.ToString();
             MaxHPBox.Text = curCharacter.maxHP.ToString();
         }
+
+        private void Chage_Icon_Click(object sender, RoutedEventArgs e)
+        {
+            var filePath = string.Empty;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Character Avatars (*.png)|*.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                filePath = openFileDialog.FileName;
+                //Image characterAvatar = new Image();
+                characterAvatar.Source = new BitmapImage(new Uri(filePath));
+            }
+            
+
+        }
     }
 }
