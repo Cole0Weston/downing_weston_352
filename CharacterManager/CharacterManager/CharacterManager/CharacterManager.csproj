@@ -182,5 +182,8 @@
     <Resource Include="PlayerIcons\male\m_42.PNG" />
     <Resource Include="PlayerIcons\male\m_43.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="book.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

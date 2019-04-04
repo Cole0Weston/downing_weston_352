@@ -29,7 +29,14 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Background="#FF574946">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush AlignmentX="Right" ImageSource="book.png">
+                <ImageBrush.Transform>
+                    <ScaleTransform ScaleY="1" ScaleX="1"/>
+                </ImageBrush.Transform>
+            </ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
             <RowDefinition/>

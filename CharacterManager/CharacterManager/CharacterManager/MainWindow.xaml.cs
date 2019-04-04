@@ -214,14 +214,22 @@ namespace CharacterManager
 
         private void Chage_Icon_Click(object sender, RoutedEventArgs e)
         {
-            var filePath = string.Empty;
+            var imagefilePath = string.Empty;
+            string path = Directory.GetCurrentDirectory();
+            // This is a possible solution to our defaulting directory problem. Will have to test on other machines.
+            path = path.Substring(0, path.Length - 9) + "PlayerIcons";           
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = path;
             openFileDialog.Filter = "Character Avatars (*.png)|*.png";
+            if (!Directory.Exists(path))
+            {
+                MessageBox.Show("Oops! PlayerIcons Folder Wasn't Found.");
+                openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            }
             if (openFileDialog.ShowDialog() == true)
             {
-                filePath = openFileDialog.FileName;
-                //Image characterAvatar = new Image();
-                characterAvatar.Source = new BitmapImage(new Uri(filePath));
+                imagefilePath = openFileDialog.FileName;
+                characterAvatar.Source = new BitmapImage(new Uri(imagefilePath));
             }
             
 
