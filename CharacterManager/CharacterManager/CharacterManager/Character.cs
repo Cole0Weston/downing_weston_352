@@ -42,6 +42,8 @@ namespace CharacterManager
         public string race;
         public string alignment;
 
+        public string playerAvatar;
+
         public Character()
         {
             abilities = new Dictionary<string, Ability>();
@@ -59,7 +61,7 @@ namespace CharacterManager
             charClass = "Class";
             race = "Race";
             alignment = "Alignment";
-
+            playerAvatar = ((Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 9)) + "PlayerIcons\\female\\f_07.PNG");            
             initializeAbilities();
             initializeSkills();
         }
@@ -79,6 +81,7 @@ namespace CharacterManager
                 writer.WriteLine(armorClass);
                 writer.WriteLine(currentHP);
                 writer.WriteLine(maxHP);
+                writer.WriteLine(playerAvatar.Substring(playerAvatar.Length - 28));
                 foreach (KeyValuePair<string, Ability> a in abilities)
                 {
                     writer.WriteLine(a.Key + ":" + a.Value.getScore());
@@ -97,7 +100,7 @@ namespace CharacterManager
             pObservers = new List<ProficiencyObserver>();
             initializeAbilities();
             initializeSkills();
-
+            
             using (StreamReader reader = new StreamReader(file))
             {
                 name = reader.ReadLine();
@@ -109,6 +112,8 @@ namespace CharacterManager
                 armorClass = Convert.ToInt16(reader.ReadLine());
                 currentHP = Convert.ToInt16(reader.ReadLine());
                 maxHP = Convert.ToInt16(reader.ReadLine());
+                playerAvatar = (Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 10)) + reader.ReadLine();
+
                 foreach (KeyValuePair<string, Ability> a in abilities)
                 {
                     string[] ability = reader.ReadLine().Split(':');

@@ -186,6 +186,7 @@ namespace CharacterManager
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
+            string directory = Directory.GetCurrentDirectory();
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Character files (*.char)|*.char";
             if (openFileDialog.ShowDialog() == true)
@@ -210,10 +211,13 @@ namespace CharacterManager
             ArmorBox.Text = curCharacter.armorClass.ToString();
             CurrentHPBox.Text = curCharacter.currentHP.ToString();
             MaxHPBox.Text = curCharacter.maxHP.ToString();
+            
+            characterAvatar.Source = new BitmapImage(new Uri(curCharacter.playerAvatar));
         }
 
         private void Chage_Icon_Click(object sender, RoutedEventArgs e)
         {
+            //imagefilepath is the directory of user's selection. 
             var imagefilePath = string.Empty;
             string path = Directory.GetCurrentDirectory();
             // This is a possible solution to our defaulting directory problem. Will have to test on other machines.
@@ -231,8 +235,16 @@ namespace CharacterManager
                 imagefilePath = openFileDialog.FileName;
                 characterAvatar.Source = new BitmapImage(new Uri(imagefilePath));
             }
-            
-
+            curCharacter.playerAvatar = imagefilePath;
         }
+        //Can we use this to make level up/down easier?
+        /*
+        <Button x:Name="LevelDown" Style="{StaticResource invisHover}" Content="-" HorizontalAlignment="Left" Margin="870,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="38.5" Height="77" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="LevelUp" Style="{StaticResource invisHover}" Content="+" HorizontalAlignment="Left" Margin="908,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="39" Height="77" FontSize="24" FontWeight="Bold"/>
+
+        private void LevelUp_Click(object sender, RoutedEventArgs e)
+        {
+            curCharacter.level += 1;
+        } */
     }
 }
