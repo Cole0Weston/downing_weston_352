@@ -158,19 +158,18 @@
                 <Label x:Name="WisBonus" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Bottom" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
             </Grid>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="185" Margin="465,40,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="327">
-            <TextBox x:Name="NameText" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="315" FontSize="20" TextChanged="NameText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
-            <TextBox x:Name="ClassText" HorizontalAlignment="Left" Height="34" Margin="0,40,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top" Width="300" FontSize="20" TextChanged="ClassText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
-            <TextBox x:Name="RaceText" HorizontalAlignment="Left" Height="34" Margin="0,80,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Width="300" FontSize="20" TextChanged="RaceText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
-            <TextBox x:Name="AlignmentText" HorizontalAlignment="Left" Height="34" Margin="0,120,0,0" TextWrapping="Wrap" Text="Alignment" VerticalAlignment="Top" Width="300" FontSize="20" TextChanged="AlignmentText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
+        <Grid HorizontalAlignment="Left" Height="185" Margin="470,40,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="327">
+            <TextBox x:Name="NameText" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="294" FontSize="20" TextChanged="NameText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E" Margin="21,0,0,0"/>
+            <TextBox x:Name="ClassText" HorizontalAlignment="Left" Height="34" Margin="21,40,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top" Width="294" FontSize="20" TextChanged="ClassText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
+            <TextBox x:Name="RaceText" HorizontalAlignment="Left" Height="34" Margin="21,79,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Width="294" FontSize="20" TextChanged="RaceText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
+            <TextBox x:Name="AlignmentText" HorizontalAlignment="Left" Height="34" Margin="21,118,0,0" TextWrapping="Wrap" Text="Alignment" VerticalAlignment="Top" Width="294" FontSize="20" TextChanged="AlignmentText_TextChanged" Background="#FFF5ECE4" BorderBrush="#FF6C605E"/>
         </Grid>
-        <Grid Height="118" Margin="465,207,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="468">
+        <Grid Height="118" Margin="486,209,0,0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="450">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="94*"/>
                 <ColumnDefinition Width="94*"/>
                 <ColumnDefinition Width="94*"/>
                 <ColumnDefinition Width="94*"/>
-                <ColumnDefinition Width="110*"/>
             </Grid.ColumnDefinitions>
             <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" Stroke="#FF6C605E" VerticalAlignment="Top" Width="78"/>
             <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="69" Margin="0,0" Stroke="#FF6C605E" VerticalAlignment="Top" Width="70"/>
@@ -182,9 +181,6 @@
             <TextBox x:Name="SpeedBox" Grid.Column="2" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="79" TextAlignment="Center" FontSize="24" TextChanged="SpeedBox_TextChanged" BorderBrush="#FF6C605E"/>
             <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="69" Margin="0,0" Stroke="#FF6C605E" VerticalAlignment="Top" Width="68" Grid.Column="3"/>
             <TextBox x:Name="ArmorBox" Grid.Column="3" HorizontalAlignment="Center" Height="33" Margin="0,75,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="80" TextAlignment="Center" FontSize="24" TextChanged="ArmorBox_TextChanged" BorderBrush="#FF6C605E"/>
-            <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="80" Margin="0,-20,0,0" Stroke="#FF6C605E" VerticalAlignment="Top" Width="80" Grid.Column="5"/>
-            <TextBox x:Name="MaxHPBox" Grid.Column="5" HorizontalAlignment="Center" Height="35" Margin="50,63,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="MaxHPBox_TextChanged" BorderBrush="#FF6C605E"/>
-            <TextBox x:Name="CurrentHPBox" Grid.Column="5" HorizontalAlignment="Center" Height="35" Margin="-50,63,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="CurrentHPBox_TextChanged" BorderBrush="#FF6C605E"/>
 
         </Grid>
         <Button Content="Save" HorizontalAlignment="Left" Margin="45,339,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="102" Height="68" Click="Save_Click" BorderBrush="#FF6C605E" Background="#FFF5ECE4" FontSize="18"/>
@@ -193,6 +189,8 @@
         <Button x:Name="Change_Icon" Style="{StaticResource invisHover}" Content="Change" HorizontalAlignment="Left" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105" Click="Change_Icon_Click" Height="103" FontSize="22" FontWeight="Bold" />
         <Ellipse Fill="#FFE8E1DF" HorizontalAlignment="Left" Height="77" Margin="870,10,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="77"/>
         <TextBox x:Name="LevelText" HorizontalAlignment="Left" Height="69" Margin="870,18,0,0" Grid.RowSpan="2" Text="1" VerticalAlignment="Top" Width="77" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" TextChanged="LevelText_TextChanged"/>
+        <TextBox x:Name="MaxHPBox" HorizontalAlignment="Center" Height="35" Margin="852,153,55,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="MaxHPBox_TextChanged" BorderBrush="#FF6C605E" Grid.RowSpan="2"/>
+        <TextBox x:Name="CurrentHPBox" HorizontalAlignment="Center" Height="35" Margin="797,153,110,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="CurrentHPBox_TextChanged" BorderBrush="#FF6C605E" Grid.RowSpan="2"/>
 
 
     </Grid>
