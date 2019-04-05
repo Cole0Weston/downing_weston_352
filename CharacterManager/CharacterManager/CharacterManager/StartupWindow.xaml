@@ -6,12 +6,15 @@
         xmlns:local="clr-namespace:CharacterManager"
         mc:Ignorable="d"
         Title="StartupWindow" Height="450" Width="800">
-    <Grid Background="#FF574946">
+    <Grid Margin="0,0,-8,-2">
+        <Grid.Background>
+            <ImageBrush ImageSource="startPage2.png"/>
+        </Grid.Background>
         <Grid HorizontalAlignment="Center" Height="280" Margin="0,110,0,29" VerticalAlignment="Center" Width="505">
             <Button x:Name="CreateNew" Content="Create New Character" HorizontalAlignment="Center" Margin="0,10,0,155" Width="428" FontSize="24" FontFamily="Times New Roman" Background="#FFF1E8D8" BorderBrush="#FFFDFDFD" Foreground="#FF38312F" Click="CreateNew_Click"/>
             <Button x:Name="LoadExisting" Content="Load Existing Character" HorizontalAlignment="Center" Margin="0,155,0,10" Width="428" FontSize="24" FontFamily="Times New Roman" Background="#FFF1E8D8" BorderBrush="#FFFDFDFD" Foreground="#FF38312F" Click="LoadExisting_Click"/>
         </Grid>
-        <Label Content="D.W. DnD 5e Character Sheet Manager" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFF1E8D8">
+        <Label Content="D.W. DnD 5e Character Sheet Manager" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Times New Roman" Foreground="#FFAE7103">
             <Label.Effect>
                 <DropShadowEffect Opacity="0.2" Direction="316"/>
             </Label.Effect>
