@@ -187,5 +187,24 @@
     <Resource Include="PlayerIcons\__male\m_49.png" />
     <Resource Include="PlayerIcons\__male\m_50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_13.png" />
+    <Resource Include="icon_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="purple_d20_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ActionRpgArmor_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
