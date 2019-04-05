@@ -190,7 +190,7 @@
         <Button Content="Save" HorizontalAlignment="Left" Margin="45,339,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="102" Height="68" Click="Save_Click" BorderBrush="#FF6C605E" Background="#FFF5ECE4" FontSize="18"/>
         <Button Content="Load" HorizontalAlignment="Left" Margin="45,412,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="102" Height="68" Click="Load_Click" BorderBrush="#FF6C605E" Background="#FFF5ECE4" FontSize="18"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="103" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105"/>
-        <Button x:Name="Chage_Icon" Style="{StaticResource invisHover}" Content="Change" HorizontalAlignment="Left" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105" Click="Chage_Icon_Click" Height="103" FontSize="22" FontWeight="Bold" />
+        <Button x:Name="Change_Icon" Style="{StaticResource invisHover}" Content="Change" HorizontalAlignment="Left" Margin="797,50,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="105" Click="Change_Icon_Click" Height="103" FontSize="22" FontWeight="Bold" />
         <Ellipse Fill="#FFE8E1DF" HorizontalAlignment="Left" Height="77" Margin="870,10,0,0" Grid.RowSpan="2" Stroke="#FF6C605E" VerticalAlignment="Top" Width="77"/>
         <TextBox x:Name="LevelText" HorizontalAlignment="Left" Height="69" Margin="870,18,0,0" Grid.RowSpan="2" Text="1" VerticalAlignment="Top" Width="77" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" TextChanged="LevelText_TextChanged"/>
 

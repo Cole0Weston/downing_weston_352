@@ -215,7 +215,7 @@ namespace CharacterManager
             characterAvatar.Source = new BitmapImage(new Uri(curCharacter.playerAvatar));
         }
 
-        private void Chage_Icon_Click(object sender, RoutedEventArgs e)
+        private void Change_Icon_Click(object sender, RoutedEventArgs e)
         {
             //imagefilepath is the directory of user's selection. 
             var imagefilePath = string.Empty;
