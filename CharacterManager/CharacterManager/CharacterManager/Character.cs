@@ -165,7 +165,11 @@ namespace CharacterManager
             switch (itemType)
             {
                 case "Weapon":
-                    items.Add(new Weapon());
+                    Weapon w = new Weapon();
+                    w.UpdateA(getAbilityBonus("Strength"));
+                    registerObserver(w);
+                    w.UpdateP(proficiencyBonus);
+                    items.Add(w);
                     break;
                 case "Armor":
                     items.Add(new Armor());

@@ -14,17 +14,21 @@ namespace CharacterManager
         public int weight;
 
         public abstract override string ToString();
+        public string getType()
+        {
+            return type;
+        }
     }
 
     class Weapon : Item, ProficiencyObserver, AbilityObserver
     {
         protected int profBonus;
         protected int abilityBonus;
-        protected int numDmgDice;
-        protected int dmgDice;
+        public int numDmgDice;
+        public int dmgDice;
         protected int dmgBonus;
         protected int atkBonus;
-        protected int range;
+        public int range;
 
         protected string ability; //The associated score - Dexterity or Strength.
         public string damageType;
@@ -56,9 +60,21 @@ namespace CharacterManager
             else { ability = "Strength"; }
         }
 
+        public string getAbility()
+        {
+            return ability;
+        }
+
         public string getAttackRoll()
         {
-            return "1d20 + " + atkBonus;
+            if(atkBonus >= 0)
+            {
+                return "1d20 + " + atkBonus;
+            }
+            else
+            {
+                return "1d20 - " + Math.Abs(atkBonus);
+            }
         }
 
         public string getDamageRoll()
@@ -66,9 +82,27 @@ namespace CharacterManager
             return numDmgDice + "d" + dmgDice + " + " + dmgBonus;
         }
 
+        public string getDamageBonus()
+        {
+            if(dmgBonus >= 0)
+            {
+                return "+ " + dmgBonus;
+            }
+            else
+            {
+                return "- " + Math.Abs(dmgBonus);
+            }
+        }
+
+        public bool getProficiency()
+        {
+            return isProficient;
+        }
+
         public void updateProficiency(bool isProf)
         {
             isProficient = isProf;
+            UpdateP(profBonus);
         }
 
         public void UpdateP(int prof)
