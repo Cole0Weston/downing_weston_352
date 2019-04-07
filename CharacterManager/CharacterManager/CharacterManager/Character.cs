@@ -94,6 +94,10 @@ namespace CharacterManager
                 {
                     writer.WriteLine(s.Key + ":" + s.Value.getProficiency());
                 }
+                writer.WriteLine(items.Count);
+                foreach (Item item in items){
+                    writer.Write(item.toSaveString());
+                }
             }
         }
 
@@ -101,6 +105,7 @@ namespace CharacterManager
         {
             abilities = new Dictionary<string, Ability>();
             skills = new Dictionary<string, Skill>();
+            items = new ObservableCollection<Item>();
             pObservers = new List<ProficiencyObserver>();
             initializeAbilities();
             initializeSkills();
@@ -127,6 +132,27 @@ namespace CharacterManager
                 {
                     string[] skill = reader.ReadLine().Split(':');
                     skills[skill[0]].setProficiency(Convert.ToBoolean(skill[1]));
+                }
+                int itemCount = Convert.ToInt16(reader.ReadLine());
+                for (int i = 0; i < itemCount; i++)
+                {
+                    string type = reader.ReadLine();
+                    if(type == "Weapon")
+                    {
+                        string iName = reader.ReadLine();
+                        string iInfo = reader.ReadLine();
+                        int iWeight = Convert.ToInt16(reader.ReadLine());
+                        string iAbility = reader.ReadLine();
+                        string iDamageType = reader.ReadLine();
+                        string[] dmg = reader.ReadLine().Split('d');
+                        int iNumDice = Convert.ToInt16(dmg[0]);
+                        int iDmgDice = Convert.ToInt16(dmg[1]);
+                        int iRange = Convert.ToInt16(reader.ReadLine());
+                        bool iProf = Convert.ToBoolean(reader.ReadLine());
+                        Weapon w = new Weapon(iName, iInfo, iWeight, iAbility, iDamageType, iNumDice, iDmgDice, iRange, iProf);
+                        Console.WriteLine(w);
+                        items.Add(w);
+                    }
                 }
             }
 

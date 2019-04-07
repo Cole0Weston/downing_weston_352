@@ -18,6 +18,7 @@ namespace CharacterManager
         {
             return type;
         }
+        public abstract string toSaveString();
     }
 
     class Weapon : Item, ProficiencyObserver, AbilityObserver
@@ -49,6 +50,20 @@ namespace CharacterManager
             atkBonus = 0;
             range = 0;
             isProficient = false;
+        }
+
+        public Weapon(string n, string i, int we, string ab, string dt, int ndd, int dd, int r, bool ip)
+        {
+            name = n;
+            type = "Weapon";
+            info = i;
+            weight = we;
+            ability = ab;
+            damageType = dt;
+            numDmgDice = ndd;
+            dmgDice = dd;
+            range = r;
+            isProficient = ip;
         }
 
         public void changeAbility()
@@ -130,6 +145,22 @@ namespace CharacterManager
         {
             return name;
         }
+
+        public override string toSaveString()
+        {
+            string saveString = "";
+            saveString += type + "\n";
+            saveString += name + "\n";
+            saveString += info + "\n";
+            saveString += weight + "\n";
+            saveString += ability + "\n";
+            saveString += damageType + "\n";
+            saveString += numDmgDice + "d" + dmgDice + "\n";
+            saveString += range + "\n";
+            saveString += isProficient + "\n";
+
+            return saveString;
+        }
     }
 
     class Armor : Item
@@ -156,6 +187,12 @@ namespace CharacterManager
         {
             return name;
         }
+
+        public override string toSaveString()
+        {
+            //TODO
+            return name + "\n";
+        }
     }
 
     class Misc : Item
@@ -171,6 +208,12 @@ namespace CharacterManager
         public override string ToString()
         {
             return name;
+        }
+
+        public override string toSaveString()
+        {
+            //TODO
+            return name + "\n";
         }
     }
 }

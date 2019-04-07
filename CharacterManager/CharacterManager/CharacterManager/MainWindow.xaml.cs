@@ -191,7 +191,9 @@ namespace CharacterManager
             openFileDialog.Filter = "Character files (*.char)|*.char";
             if (openFileDialog.ShowDialog() == true)
             {
-                curCharacter = new Character(openFileDialog.FileName);
+                //This eventually should be changed to open the character in a new tab.
+                characterList[0] = new Character(openFileDialog.FileName);
+                curCharacter = (Character)characterList[0];
             }
 
             UpdateFields();
