@@ -94,6 +94,7 @@ namespace CharacterManager
                 {
                     writer.WriteLine(s.Key + ":" + s.Value.getProficiency());
                 }
+                //Write each item's "save string," which contains all of its information.
                 writer.WriteLine(items.Count);
                 foreach (Item item in items){
                     writer.Write(item.toSaveString());
@@ -133,6 +134,7 @@ namespace CharacterManager
                     string[] skill = reader.ReadLine().Split(':');
                     skills[skill[0]].setProficiency(Convert.ToBoolean(skill[1]));
                 }
+                //Read the number of items, and then load each item based on its type.
                 int itemCount = Convert.ToInt16(reader.ReadLine());
                 for (int i = 0; i < itemCount; i++)
                 {
@@ -150,8 +152,27 @@ namespace CharacterManager
                         int iRange = Convert.ToInt16(reader.ReadLine());
                         bool iProf = Convert.ToBoolean(reader.ReadLine());
                         Weapon w = new Weapon(iName, iInfo, iWeight, iAbility, iDamageType, iNumDice, iDmgDice, iRange, iProf);
-                        Console.WriteLine(w);
                         items.Add(w);
+                    }
+                    else if(type == "Armor")
+                    {
+                        string iName = reader.ReadLine();
+                        string iInfo = reader.ReadLine();
+                        int iWeight = Convert.ToInt16(reader.ReadLine());
+                        int iAC = Convert.ToInt16(reader.ReadLine());
+                        bool iEquipped = Convert.ToBoolean(reader.ReadLine());
+
+                        Armor a = new Armor(iName, iInfo, iWeight, iAC, iEquipped);
+                        items.Add(a);
+                    }
+                    else if (type == "Misc")
+                    {
+                        string iName = reader.ReadLine();
+                        string iInfo = reader.ReadLine();
+                        int iWeight = Convert.ToInt16(reader.ReadLine());
+
+                        Misc m = new Misc(iName, iInfo, iWeight);
+                        items.Add(m);
                     }
                 }
             }

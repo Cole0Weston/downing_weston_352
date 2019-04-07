@@ -178,6 +178,16 @@ namespace CharacterManager
             equipped = false;
         }
 
+        public Armor(string n, string i, int w, int ac, bool eq)
+        {
+            name = n;
+            type = "Armor";
+            info = i;
+            weight = w;
+            armorClass = ac;
+            equipped = eq;
+        }
+
         public void setEquipped(bool isEquipped)
         {
             equipped = isEquipped;
@@ -190,8 +200,15 @@ namespace CharacterManager
 
         public override string toSaveString()
         {
-            //TODO
-            return name + "\n";
+            string saveString = "";
+            saveString += type + "\n";
+            saveString += name + "\n";
+            saveString += info + "\n";
+            saveString += weight + "\n";
+            saveString += armorClass + "\n";
+            saveString += equipped + "\n";
+
+            return saveString;
         }
     }
 
@@ -205,6 +222,14 @@ namespace CharacterManager
             weight = 0;
         }
 
+        public Misc(string n, string i, int w)
+        {
+            name = n;
+            type = "Misc";
+            info = i;
+            weight = w;
+        }
+
         public override string ToString()
         {
             return name;
@@ -212,8 +237,13 @@ namespace CharacterManager
 
         public override string toSaveString()
         {
-            //TODO
-            return name + "\n";
+            string saveString = "";
+            saveString += type + "\n";
+            saveString += name + "\n";
+            saveString += info + "\n";
+            saveString += weight + "\n";
+
+            return saveString;
         }
     }
 }
