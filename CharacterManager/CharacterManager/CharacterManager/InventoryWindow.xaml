@@ -19,7 +19,7 @@
             <Label Content="Weight:" HorizontalAlignment="Left" Margin="166,38,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="ItemWeight" HorizontalAlignment="Left" Height="23" Margin="221,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89" TextChanged="ItemWeight_TextChanged"/>
             <TextBox x:Name="ItemInfo" HorizontalAlignment="Left" Height="112" Margin="17,180,0,0" TextWrapping="Wrap" Text="Info / Description" VerticalAlignment="Top" Width="308" TextChanged="ItemInfo_TextChanged"/>
-            <Grid x:Name="WeaponGrid" HorizontalAlignment="Left" Height="106" Margin="17,69,0,0" VerticalAlignment="Top" Width="308" Visibility="Visible">
+            <Grid x:Name="WeaponGrid" HorizontalAlignment="Left" Height="106" Margin="17,69,0,0" VerticalAlignment="Top" Width="308" Visibility="Hidden">
                 <Label x:Name="WeaponAbility" Content="Ability: Strength" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,0,0,0"/>
                 <Button x:Name="AbilityToggle" Content="Toggle" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" Width="25" FontSize="6" Click="AbilityToggle_Click" Height="21"/>
                 <Label Content="Attack:" HorizontalAlignment="Left" Margin="151,0,0,0" VerticalAlignment="Top"/>
@@ -35,6 +35,11 @@
                 <Label Content="Range:" HorizontalAlignment="Left" Margin="3,64,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="ItemRange" HorizontalAlignment="Left" Height="23" Margin="49,68,0,0" TextWrapping="NoWrap" Text="0" VerticalAlignment="Top" Width="36" TextChanged="ItemRange_TextChanged"/>
 
+            </Grid>
+            <Grid x:Name="ArmorGrid" HorizontalAlignment="Left" Height="100" Margin="17,75,0,0" VerticalAlignment="Top" Width="308" Visibility="Hidden">
+                <Label Content="Armor Class:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="ArmorClassBox" HorizontalAlignment="Left" Height="23" Margin="76,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45" TextChanged="ArmorClassBox_TextChanged"/>
+                <CheckBox x:Name="EquippedBox" Content="Equipped" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Checked="EquippedBox_Checked" Unchecked="EquippedBox_Checked"/>
             </Grid>
         </Grid>
         <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="9,58,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="ExitButton_Click"/>

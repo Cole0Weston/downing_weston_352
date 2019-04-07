@@ -52,6 +52,7 @@ namespace CharacterManager
         private void InventoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             WeaponGrid.Visibility = Visibility.Hidden;
+            ArmorGrid.Visibility = Visibility.Hidden;
             curItem = (Item)InventoryList.SelectedItem;
             ItemName.Text = curItem.name;
             ItemType.Content = curItem.getType();
@@ -68,6 +69,12 @@ namespace CharacterManager
                 DamageDice.Text = ((Weapon)curItem).dmgDice.ToString();
                 DamageBonus.Content = ((Weapon)curItem).getDamageBonus();
                 ItemRange.Text = ((Weapon)curItem).range.ToString();
+            }
+            else if(curItem.getType() == "Armor")
+            {
+                ArmorGrid.Visibility = Visibility.Visible;
+                ArmorClassBox.Text = ((Armor)curItem).armorClass.ToString();
+                EquippedBox.IsChecked = ((Armor)curItem).equipped;
             }
         }
 
@@ -171,6 +178,24 @@ namespace CharacterManager
                 }
                 ((TextBox)sender).Text = ((Weapon)curItem).range.ToString();
             }
+        }
+
+        private void ArmorClassBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (curItem != null)
+            {
+                string text = ((TextBox)sender).Text;
+                if (int.TryParse(text, out int value))
+                {
+                    ((Armor)curItem).armorClass = value;
+                }
+                ((TextBox)sender).Text = ((Armor)curItem).armorClass.ToString();
+            }
+        }
+
+        private void EquippedBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ((Armor)curItem).equipped = (bool)EquippedBox.IsChecked;
         }
     }
 }

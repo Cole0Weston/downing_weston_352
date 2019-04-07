@@ -166,7 +166,7 @@ namespace CharacterManager
     class Armor : Item
     {
         public int armorClass;
-        protected bool equipped;
+        public bool equipped;
 
         public Armor()
         {
@@ -186,11 +186,6 @@ namespace CharacterManager
             weight = w;
             armorClass = ac;
             equipped = eq;
-        }
-
-        public void setEquipped(bool isEquipped)
-        {
-            equipped = isEquipped;
         }
 
         public override string ToString()
