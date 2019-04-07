@@ -26,6 +26,8 @@ namespace CharacterManager
         //Skills are also indexed by name: skills["Athletics"]
         private Dictionary<String, Skill> skills;
 
+        private List<Item> items;
+
         private List<ProficiencyObserver> pObservers;
         private int proficiencyBonus; // ((level - 1) / 4) + 2
         private int perception; // 10 + Wisdom bonus.
@@ -48,6 +50,7 @@ namespace CharacterManager
         {
             abilities = new Dictionary<string, Ability>();
             skills = new Dictionary<string, Skill>();
+            items = new List<Item>();
             pObservers = new List<ProficiencyObserver>();
             proficiencyBonus = 2;
             level = 1;
@@ -154,6 +157,22 @@ namespace CharacterManager
         public void updatePerception()
         {
             perception = 10 + getAbilityBonus("Wisdom");
+        }
+
+        public void addItem(string itemType)
+        {
+            switch (itemType)
+            {
+                case "Weapon":
+                    items.Add(new Weapon());
+                    break;
+                case "Armor":
+                    items.Add(new Armor());
+                    break;
+                case "Misc":
+                    items.Add(new Misc());
+                    break;
+            }
         }
 
         // GETTERS
