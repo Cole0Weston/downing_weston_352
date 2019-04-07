@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace CharacterManager
 {
-    abstract class Item
+    public abstract class Item
     {
         public string name;
         protected string type;
         public string info;
         public int weight;
+
+        public abstract override string ToString();
     }
 
     class Weapon : Item, ProficiencyObserver, AbilityObserver
@@ -89,6 +91,11 @@ namespace CharacterManager
                 atkBonus += profBonus;
             }
         }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 
     class Armor : Item
@@ -110,6 +117,11 @@ namespace CharacterManager
         {
             equipped = isEquipped;
         }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 
     class Misc : Item
@@ -120,6 +132,11 @@ namespace CharacterManager
             type = "Misc";
             info = "Info / Description";
             weight = 0;
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 }

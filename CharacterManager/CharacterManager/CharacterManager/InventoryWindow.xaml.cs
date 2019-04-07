@@ -29,6 +29,22 @@ namespace CharacterManager
             curCharacter = new Character();
             InitializeComponent();
             curCharacter = (Character)characterList[0];
+            InventoryList.ItemsSource = curCharacter.items;
+        }
+
+        private void AddWeaponButton_Click(object sender, RoutedEventArgs e)
+        {
+            curCharacter.addItem("Weapon");
+        }
+
+        private void AddArmorButton_Click(object sender, RoutedEventArgs e)
+        {
+            curCharacter.addItem("Armor");
+        }
+
+        private void AddMiscButton_Click(object sender, RoutedEventArgs e)
+        {
+            curCharacter.addItem("Misc");
         }
     }
 }

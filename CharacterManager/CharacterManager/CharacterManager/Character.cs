@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace CharacterManager
 {
@@ -26,7 +27,7 @@ namespace CharacterManager
         //Skills are also indexed by name: skills["Athletics"]
         private Dictionary<String, Skill> skills;
 
-        private List<Item> items;
+        public ObservableCollection<Item> items;
 
         private List<ProficiencyObserver> pObservers;
         private int proficiencyBonus; // ((level - 1) / 4) + 2
@@ -50,7 +51,7 @@ namespace CharacterManager
         {
             abilities = new Dictionary<string, Ability>();
             skills = new Dictionary<string, Skill>();
-            items = new List<Item>();
+            items = new ObservableCollection<Item>();
             pObservers = new List<ProficiencyObserver>();
             proficiencyBonus = 2;
             level = 1;
