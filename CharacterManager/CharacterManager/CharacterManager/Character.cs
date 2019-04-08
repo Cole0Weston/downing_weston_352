@@ -28,6 +28,7 @@ namespace CharacterManager
         private Dictionary<String, Skill> skills;
 
         public ObservableCollection<Item> items;
+        public ObservableCollection<Spell> spells;
 
         private List<ProficiencyObserver> pObservers;
         private int proficiencyBonus; // ((level - 1) / 4) + 2
