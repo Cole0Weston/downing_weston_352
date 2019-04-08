@@ -53,6 +53,7 @@ namespace CharacterManager
             abilities = new Dictionary<string, Ability>();
             skills = new Dictionary<string, Skill>();
             items = new ObservableCollection<Item>();
+            spells = new ObservableCollection<Spell>();
             pObservers = new List<ProficiencyObserver>();
             proficiencyBonus = 2;
             level = 1;
@@ -108,6 +109,7 @@ namespace CharacterManager
             abilities = new Dictionary<string, Ability>();
             skills = new Dictionary<string, Skill>();
             items = new ObservableCollection<Item>();
+            spells = new ObservableCollection<Spell>();
             pObservers = new List<ProficiencyObserver>();
             initializeAbilities();
             initializeSkills();
@@ -224,6 +226,21 @@ namespace CharacterManager
                     break;
                 case "Misc":
                     items.Add(new Misc());
+                    break;
+            }
+        }
+
+        public void addSpell(string spellType)
+        {
+            switch (spellType)
+            {
+                case "Damage":
+                    Spell ds = new DamageSpell();
+                    spells.Add(ds);
+                    break;
+                case "Utility":
+                    Spell us = new UtilitySpell();
+                    spells.Add(us);
                     break;
             }
         }
