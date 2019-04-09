@@ -217,13 +217,50 @@
     <Resource Include="GUI_Assets\purple_d20_png.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="GUI_Assets\ActionRpgArmor_72.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="GUI_Assets\icon_16.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="GUI_Assets\startPage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\inventorypage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\button_01_down.png" />
+    <Resource Include="GUI_Assets\InventoryButtons\button_01_over.png" />
+    <Resource Include="GUI_Assets\InventoryButtons\button_01_up.png" />
+    <Resource Include="GUI_Assets\InventoryButtons\button_02_down.png" />
+    <Resource Include="GUI_Assets\InventoryButtons\button_02_over.png" />
+    <Resource Include="GUI_Assets\InventoryButtons\button_02_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\slot.png" />
+    <Resource Include="GUI_Assets\InventoryButtons\slot_02.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\slotflipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\weaponplus.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\armorplus.PNG" />
+    <Resource Include="GUI_Assets\InventoryButtons\torchplus.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\BackArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\Bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\spellbook.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

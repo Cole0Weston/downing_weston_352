@@ -6,14 +6,60 @@
         xmlns:local="clr-namespace:CharacterManager"
         mc:Ignorable="d"
         Title="InventoryWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="invisHover" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="#FF5397D1" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#9c9d9e"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Opacity" Value= ".5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <ListBox x:Name="InventoryList" HorizontalAlignment="Center" Height="302" Margin="89,58,350,59" VerticalAlignment="Center" Width="353" SelectionMode="Single" SelectionChanged="InventoryList_SelectionChanged"/>
-        <Button x:Name="AddWeaponButton" Content="Add Weapon" HorizontalAlignment="Left" Margin="9,126,0,0" VerticalAlignment="Top" Width="75" Height="53" Click="AddWeaponButton_Click"/>
-        <Button x:Name="AddArmorButton" Content="Add Armor" HorizontalAlignment="Left" Margin="9,184,0,0" VerticalAlignment="Top" Width="75" Height="54" Click="AddArmorButton_Click"/>
-        <Button x:Name="AddMiscButton" Content="Add Misc" HorizontalAlignment="Left" Margin="9,243,0,0" VerticalAlignment="Top" Width="75" Height="53" Click="AddMiscButton_Click"/>
-        <Grid HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="335">
-            <Label Content="Name:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="ItemName" HorizontalAlignment="Left" Height="23" Margin="54,10,0,0" TextWrapping="NoWrap" Text="Item Name" VerticalAlignment="Top" Width="256" TextChanged="ItemName_TextChanged"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="GUI_Assets/inventorypage.png"/>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="329" Margin="89,31,0,0" VerticalAlignment="Top" Width="355" Source="GUI_Assets/InventoryButtons/slot_02.PNG" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="89" Margin="0,236,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot.png"/>
+        <Image HorizontalAlignment="Left" Height="89" Margin="0,147,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot.png"/>
+        <Image HorizontalAlignment="Left" Height="89" Margin="0,58,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot.png"/>
+        <ListBox x:Name="InventoryList" HorizontalAlignment="Center" Height="255" Margin="124,70,384,94" VerticalAlignment="Center" Width="284" SelectionMode="Single" SelectionChanged="InventoryList_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+        <Button x:Name="AddWeaponButton" Style="{StaticResource invisHover}" Content="Add Weapon" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="65" Height="65" Click="AddWeaponButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/weaponplus.PNG"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="AddArmorButton" Style="{StaticResource invisHover}" Content="Add Armor" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Width="65" Height="65" Click="AddArmorButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/armorplus.PNG"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="AddMiscButton" Style="{StaticResource invisHover}" Content="Add Misc" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="65" Height="64" Click="AddMiscButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/torchplus.PNG"/>
+            </Button.Background>
+        </Button>
+        <Grid HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="345" Opacity="0.99">
+            <Grid.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/note.png"/>
+            </Grid.Background>
+            <TextBox x:Name="ItemName" HorizontalAlignment="Left" Height="19" Margin="118,4,0,0" TextWrapping="NoWrap" Text="Item Name" VerticalAlignment="Top" Width="114" TextChanged="ItemName_TextChanged" Background="{x:Null}" BorderBrush="{x:Null}" TextAlignment="Center"/>
             <Label Content="Type:" HorizontalAlignment="Left" Margin="17,38,0,0" VerticalAlignment="Top"/>
             <Label x:Name="ItemType" Content="Item Type" HorizontalAlignment="Left" Margin="54,38,0,0" VerticalAlignment="Top" Width="72"/>
             <Label Content="Weight:" HorizontalAlignment="Left" Margin="166,38,0,0" VerticalAlignment="Top"/>
@@ -42,7 +88,15 @@
                 <CheckBox x:Name="EquippedBox" Content="Equipped" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Checked="EquippedBox_Checked" Unchecked="EquippedBox_Checked"/>
             </Grid>
         </Grid>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="9,58,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="ExitButton_Click"/>
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="9,301,0,0" VerticalAlignment="Top" Width="75" Height="59" Click="DeleteButton_Click"/>
+        <Button x:Name="ExitButton" Style="{StaticResource invisHover}" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="65" Click="ExitButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="10,344,0,0">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/BackArrow.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="DeleteButton" Style="{StaticResource invisHover}" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="59" Click="DeleteButton_Click" BorderBrush="{x:Null}" Foreground="#FFFFE3E3" FontFamily="SimSun" FontSize="16">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/button_01_down.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
