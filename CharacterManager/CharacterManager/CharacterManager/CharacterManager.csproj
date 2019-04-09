@@ -121,7 +121,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="book.png" />
+    <Resource Include="GUI_Assets\book.png" />
     <Resource Include="PlayerIcons\female\f_01.png" />
     <Resource Include="PlayerIcons\female\f_02.png" />
     <Resource Include="PlayerIcons\female\f_03.png" />
@@ -204,26 +204,26 @@
     <Resource Include="PlayerIcons\__male\m_50.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon_13.png" />
-    <Resource Include="icon_14.png" />
+    <Resource Include="GUI_Assets\icon_13.png" />
+    <Resource Include="GUI_Assets\icon_14.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="11.PNG" />
+    <Resource Include="GUI_Assets\11.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon_21.png" />
+    <Resource Include="GUI_Assets\icon_21.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="purple_d20_png.png" />
+    <Resource Include="GUI_Assets\purple_d20_png.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ActionRpgArmor_72.png" />
+    <Resource Include="GUI_Assets\ActionRpgArmor_72.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon_16.png" />
+    <Resource Include="GUI_Assets\icon_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="startPage2.png" />
+    <Resource Include="GUI_Assets\startPage2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
