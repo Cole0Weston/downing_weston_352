@@ -191,15 +191,19 @@
         <TextBox x:Name="LevelText" HorizontalAlignment="Left" Height="69" Margin="870,18,0,0" Grid.RowSpan="2" Text="1" VerticalAlignment="Top" Width="77" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" FontWeight="Bold" FontSize="48" FontFamily="Times New Roman" TextChanged="LevelText_TextChanged"/>
         <Image x:Name="brokenHeart_Copy" HorizontalAlignment="Left" Height="51" Margin="852,153,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="69" Source="GUI_Assets/icon_14.png" Opacity="0.85"/>
         <Image x:Name="brokenHeart" HorizontalAlignment="Left" Height="51" Margin="797,153,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="69" Source="GUI_Assets/icon_13.png" Opacity="0.85"/>
-        <TextBox x:Name="CurrentHPBox" HorizontalAlignment="Center" Height="35" Margin="797,161,110,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="CurrentHPBox_TextChanged" Grid.RowSpan="2" OpacityMask="Black" FontWeight="Bold" Foreground="#FFAC0000">
-            <TextBox.BorderBrush>
-                <SolidColorBrush Color="#FF6C605E" Opacity="0"/>
-            </TextBox.BorderBrush>
-            <TextBox.Background>
-                <SolidColorBrush Color="White" Opacity="0"/>
-            </TextBox.Background>
-        </TextBox>
-        <TextBox x:Name="MaxHPBox" HorizontalAlignment="Center" Height="35" Margin="852,161,55,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="MaxHPBox_TextChanged" BorderBrush="{x:Null}" Grid.RowSpan="2" Background="{x:Null}" FontWeight="Bold" Foreground="#FFAC0000"/>
+        <Canvas Margin="797,161,110,312" Grid.RowSpan="2">
+            <TextBox x:Name="CurrentHPBox" HorizontalAlignment="Center" Height="35" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="CurrentHPBox_TextChanged" OpacityMask="Black" FontWeight="Bold" Foreground="#FFAC0000">
+                <TextBox.BorderBrush>
+                    <SolidColorBrush Color="#FF6C605E" Opacity="0"/>
+                </TextBox.BorderBrush>
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </TextBox.Background>
+            </TextBox>
+        </Canvas>
+        <Canvas Margin="852,161,55,312" Grid.RowSpan="2">
+            <TextBox x:Name="MaxHPBox" HorizontalAlignment="Center" Height="35" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="50" TextAlignment="Center" FontSize="24" TextChanged="MaxHPBox_TextChanged" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Bold" Foreground="#FFAC0000"/>
+        </Canvas>
         <Button x:Name="InventoryButton" Style="{StaticResource invisHover}" Content="Inventory" HorizontalAlignment="Left" Margin="178,369,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="102" Height="102" Click="InventoryButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="GUI_Assets/Bag.png"/>

@@ -39,7 +39,7 @@
         <Image HorizontalAlignment="Left" Height="89" Margin="0,236,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot.png"/>
         <Image HorizontalAlignment="Left" Height="89" Margin="0,147,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot.png"/>
         <Image HorizontalAlignment="Left" Height="89" Margin="0,58,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot.png"/>
-        <ListBox x:Name="InventoryList" HorizontalAlignment="Center" Height="255" Margin="124,70,384,94" VerticalAlignment="Center" Width="284" SelectionMode="Single" SelectionChanged="InventoryList_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+        <ListBox x:Name="InventoryList" HorizontalAlignment="Center" Height="255" Margin="124,70,384,94" VerticalAlignment="Center" Width="284" SelectionMode="Single" SelectionChanged="InventoryList_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="14"/>
         <Button x:Name="AddWeaponButton" Style="{StaticResource invisHover}" Content="Add Weapon" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="65" Height="65" Click="AddWeaponButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="GUI_Assets/InventoryButtons/weaponplus.PNG"/>
