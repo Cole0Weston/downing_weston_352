@@ -20,6 +20,7 @@ namespace CharacterManager
         public string save;
 
         public abstract override string ToString();
+        public abstract string toSaveString();
 
         public string getType()
         {
@@ -52,6 +53,40 @@ namespace CharacterManager
         {
             return name;
         }
+
+        public override string toSaveString()
+        {
+            string saveString = "";
+            saveString += type + "\n";
+            saveString += name + "\n";
+            saveString += level + "\n";
+            saveString += castTime + "\n";
+            saveString += duration + "\n";
+            saveString += range + "\n";
+            saveString += school + "\n";
+            saveString += components + "\n";
+            saveString += info + "\n";
+            saveString += save + "\n";
+            saveString += damage + "\n";
+            saveString += damageType + "\n";
+            return saveString;
+        }
+
+        public DamageSpell(string n, string l, string ct, string d, string r, string s, string c, string i, string sv, string dmg, string dmgt)
+        {
+            name = n;
+            type = "Damage";
+            level = l;
+            castTime = ct;
+            duration = d;
+            range = r;
+            school = s;
+            components = c;
+            info = i;
+            save = sv;
+            damage = dmg;
+            damageType = dmgt;
+        }
     }
 
     class UtilitySpell : Spell
@@ -70,9 +105,39 @@ namespace CharacterManager
             save = "";
         }
 
+        public UtilitySpell(string n, string l, string ct, string d, string r, string s, string c, string i, string sv)
+        {
+            name = n;
+            type = "Utility";
+            level = l;
+            castTime = ct;
+            duration = d;
+            range = r;
+            school = s;
+            components = c;
+            info = i;
+            save = sv;
+        }
+
         public override string ToString()
         {
             return name;
+        }
+
+        public override string toSaveString()
+        {
+            string saveString = "";
+            saveString += type + "\n";
+            saveString += name + "\n";
+            saveString += level + "\n";
+            saveString += castTime + "\n";
+            saveString += duration + "\n";
+            saveString += range + "\n";
+            saveString += school + "\n";
+            saveString += components + "\n";
+            saveString += info + "\n";
+            saveString += save + "\n";
+            return saveString;
         }
     }
 }

@@ -54,6 +54,8 @@ namespace CharacterManager
             WeaponGrid.Visibility = Visibility.Hidden;
             ArmorGrid.Visibility = Visibility.Hidden;
             curItem = (Item)InventoryList.SelectedItem;
+            if(curItem == null) { return; }
+
             ItemName.Text = curItem.name;
             ItemType.Content = curItem.getType();
             ItemWeight.Text = curItem.weight.ToString();
@@ -196,6 +198,13 @@ namespace CharacterManager
         private void EquippedBox_Checked(object sender, RoutedEventArgs e)
         {
             ((Armor)curItem).equipped = (bool)EquippedBox.IsChecked;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            //This seems to work properly if the curItem = null. It deletes nothing.
+            curCharacter.items.Remove(curItem);
+            InventoryList.Items.Refresh();
         }
     }
 }

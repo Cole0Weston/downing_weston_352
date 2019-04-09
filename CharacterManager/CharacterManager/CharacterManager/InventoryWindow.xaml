@@ -8,9 +8,9 @@
         Title="InventoryWindow" Height="450" Width="800">
     <Grid>
         <ListBox x:Name="InventoryList" HorizontalAlignment="Center" Height="302" Margin="89,58,350,59" VerticalAlignment="Center" Width="353" SelectionMode="Single" SelectionChanged="InventoryList_SelectionChanged"/>
-        <Button x:Name="AddWeaponButton" Content="Add Weapon" HorizontalAlignment="Left" Margin="9,126,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="AddWeaponButton_Click"/>
-        <Button x:Name="AddArmorButton" Content="Add Armor" HorizontalAlignment="Left" Margin="9,206,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="AddArmorButton_Click"/>
-        <Button x:Name="AddMiscButton" Content="Add Misc" HorizontalAlignment="Left" Margin="9,286,0,0" VerticalAlignment="Top" Width="75" Height="74" Click="AddMiscButton_Click"/>
+        <Button x:Name="AddWeaponButton" Content="Add Weapon" HorizontalAlignment="Left" Margin="9,126,0,0" VerticalAlignment="Top" Width="75" Height="53" Click="AddWeaponButton_Click"/>
+        <Button x:Name="AddArmorButton" Content="Add Armor" HorizontalAlignment="Left" Margin="9,184,0,0" VerticalAlignment="Top" Width="75" Height="54" Click="AddArmorButton_Click"/>
+        <Button x:Name="AddMiscButton" Content="Add Misc" HorizontalAlignment="Left" Margin="9,243,0,0" VerticalAlignment="Top" Width="75" Height="53" Click="AddMiscButton_Click"/>
         <Grid HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="335">
             <Label Content="Name:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="ItemName" HorizontalAlignment="Left" Height="23" Margin="54,10,0,0" TextWrapping="NoWrap" Text="Item Name" VerticalAlignment="Top" Width="256" TextChanged="ItemName_TextChanged"/>
@@ -43,5 +43,6 @@
             </Grid>
         </Grid>
         <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="9,58,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="ExitButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="9,301,0,0" VerticalAlignment="Top" Width="75" Height="59" Click="DeleteButton_Click"/>
     </Grid>
 </Window>

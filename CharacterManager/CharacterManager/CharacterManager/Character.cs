@@ -88,18 +88,28 @@ namespace CharacterManager
                 writer.WriteLine(currentHP);
                 writer.WriteLine(maxHP);
                 writer.WriteLine(playerAvatar.Substring(playerAvatar.Length - 28));
+                //ABILITIES
                 foreach (KeyValuePair<string, Ability> a in abilities)
                 {
                     writer.WriteLine(a.Key + ":" + a.Value.getScore());
                 }
+                //SKILLS
                 foreach (KeyValuePair<string, Skill> s in skills)
                 {
                     writer.WriteLine(s.Key + ":" + s.Value.getProficiency());
                 }
-                //Write each item's "save string," which contains all of its information.
+                //ITEMS
                 writer.WriteLine(items.Count);
-                foreach (Item item in items){
+                foreach (Item item in items)
+                {
+                    //Write each item's "save string," which contains all of its information.
                     writer.Write(item.toSaveString());
+                }
+                //SPELLS
+                writer.WriteLine(spells.Count);
+                foreach (Spell spell in spells)
+                {
+                    writer.Write(spell.toSaveString());
                 }
             }
         }
@@ -176,6 +186,41 @@ namespace CharacterManager
 
                         Misc m = new Misc(iName, iInfo, iWeight);
                         items.Add(m);
+                    }
+                }
+                int spellCount = Convert.ToInt16(reader.ReadLine());
+                for (int i = 0; i < spellCount; i++)
+                {
+                    string type = reader.ReadLine();
+                    if (type == "Damage")
+                    {
+                        string sName = reader.ReadLine();
+                        string sLevel = reader.ReadLine();
+                        string sCastTime = reader.ReadLine();
+                        string sDuration = reader.ReadLine();
+                        string sRange = reader.ReadLine();
+                        string sSchool = reader.ReadLine();
+                        string sComps = reader.ReadLine();
+                        string sInfo = reader.ReadLine();
+                        string sSave = reader.ReadLine();
+                        string sDamage = reader.ReadLine();
+                        string sDamageType = reader.ReadLine();
+                        Spell s = new DamageSpell(sName, sLevel, sCastTime, sDuration, sRange, sSchool, sComps, sInfo, sSave, sDamage, sDamageType);
+                        spells.Add(s);
+                    }
+                    else if (type == "Utility")
+                    {
+                        string sName = reader.ReadLine();
+                        string sLevel = reader.ReadLine();
+                        string sCastTime = reader.ReadLine();
+                        string sDuration = reader.ReadLine();
+                        string sRange = reader.ReadLine();
+                        string sSchool = reader.ReadLine();
+                        string sComps = reader.ReadLine();
+                        string sInfo = reader.ReadLine();
+                        string sSave = reader.ReadLine();
+                        Spell s = new UtilitySpell(sName, sLevel, sCastTime, sDuration, sRange, sSchool, sComps, sInfo, sSave);
+                        spells.Add(s);
                     }
                 }
             }
