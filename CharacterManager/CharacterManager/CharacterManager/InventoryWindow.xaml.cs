@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +73,7 @@ namespace CharacterManager
                 DamageDice.Text = ((Weapon)curItem).dmgDice.ToString();
                 DamageBonus.Content = ((Weapon)curItem).getDamageBonus();
                 ItemRange.Text = ((Weapon)curItem).range.ToString();
+                WeaponImage.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 9)+((Weapon)curItem).weaponIcon));
             }
             else if(curItem.getType() == "Armor")
             {
@@ -205,6 +208,60 @@ namespace CharacterManager
             //This seems to work properly if the curItem = null. It deletes nothing.
             curCharacter.items.Remove(curItem);
             InventoryList.Items.Refresh();
+        }
+
+        private void WeaponImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            //imagefilepath is the directory of user's selection. 
+            var imagefilePath = string.Empty;
+            string path = Directory.GetCurrentDirectory();
+            // This is a possible solution to our defaulting directory problem. Will have to test on other machines.
+            path = path.Substring(0, path.Length - 9) + "WeaponIcons";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "Weapon Icons (*.png)|*.png";
+            if (!Directory.Exists(path))
+            {
+                MessageBox.Show("Oops! WeaponsIcons Folder Wasn't Found.");
+                openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            }
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imagefilePath = openFileDialog.FileName;
+                WeaponImage.Source = new BitmapImage(new Uri(imagefilePath));
+            }
+            if(curItem != null)
+            {
+                ((Weapon)curItem).weaponIcon = imagefilePath;
+            }
+            
+        }
+
+        private void ArmorImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            //imagefilepath is the directory of user's selection. 
+            var imagefilePath = string.Empty;
+            string path = Directory.GetCurrentDirectory();
+            // This is a possible solution to our defaulting directory problem. Will have to test on other machines.
+            path = path.Substring(0, path.Length - 9) + "ArmorIcons";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "Armor Icons (*.png)|*.png";
+            if (!Directory.Exists(path))
+            {
+                MessageBox.Show("Oops! ArmorIcons Folder Wasn't Found.");
+                openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            }
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imagefilePath = openFileDialog.FileName;
+                ArmorImage.Source = new BitmapImage(new Uri(imagefilePath));
+            }
+            if (curItem != null)
+            {
+                //((Armor)curItem).armorIcon = imagefilePath;
+            }
+
         }
     }
 }

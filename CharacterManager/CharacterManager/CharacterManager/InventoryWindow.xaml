@@ -60,32 +60,39 @@
                 <ImageBrush ImageSource="GUI_Assets/InventoryButtons/note.png"/>
             </Grid.Background>
             <TextBox x:Name="ItemName" HorizontalAlignment="Left" Height="19" Margin="118,4,0,0" TextWrapping="NoWrap" Text="Item Name" VerticalAlignment="Top" Width="114" TextChanged="ItemName_TextChanged" Background="{x:Null}" BorderBrush="{x:Null}" TextAlignment="Center"/>
-            <Label Content="Type:" HorizontalAlignment="Left" Margin="17,38,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="ItemType" Content="Item Type" HorizontalAlignment="Left" Margin="54,38,0,0" VerticalAlignment="Top" Width="72"/>
-            <Label Content="Weight:" HorizontalAlignment="Left" Margin="166,38,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="ItemWeight" HorizontalAlignment="Left" Height="23" Margin="221,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89" TextChanged="ItemWeight_TextChanged"/>
-            <TextBox x:Name="ItemInfo" HorizontalAlignment="Left" Height="112" Margin="17,180,0,0" TextWrapping="Wrap" Text="Info / Description" VerticalAlignment="Top" Width="308" TextChanged="ItemInfo_TextChanged"/>
+            <Label Content="Type:" HorizontalAlignment="Left" Margin="17,33,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="ItemType" Content="Item Type" HorizontalAlignment="Left" Margin="54,33,0,0" VerticalAlignment="Top" Width="72"/>
+            <Label Content="Weight:" HorizontalAlignment="Left" Margin="17,64,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="ItemWeight" HorizontalAlignment="Left" Height="23" Margin="72,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89" TextChanged="ItemWeight_TextChanged"/>
+            <TextBox x:Name="ItemInfo" HorizontalAlignment="Left" Height="81" Margin="17,211,0,0" TextWrapping="Wrap" Text="Info / Description" VerticalAlignment="Top" Width="308" TextChanged="ItemInfo_TextChanged"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="225,33,0,0" VerticalAlignment="Top" Width="100" Source="GUI_Assets/InventoryButtons/slot_02.PNG"/>
+
             <Grid x:Name="WeaponGrid" HorizontalAlignment="Left" Height="106" Margin="17,69,0,0" VerticalAlignment="Top" Width="308" Visibility="Hidden">
-                <Label x:Name="WeaponAbility" Content="Ability: Strength" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,0,0,0"/>
-                <Button x:Name="AbilityToggle" Content="Toggle" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" Width="25" FontSize="6" Click="AbilityToggle_Click" Height="21"/>
-                <Label Content="Attack:" HorizontalAlignment="Left" Margin="151,0,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="ItemAttack" Content="1d20 + 0" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top"/>
-                <CheckBox x:Name="Proficient" Content="Proficient" HorizontalAlignment="Left" Margin="228,91,0,0" VerticalAlignment="Top" Checked="Proficient_CheckedChanged" Unchecked="Proficient_CheckedChanged"/>
+                <Label x:Name="WeaponAbility" Content="Ability: Strength" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,65,0,0"/>
+                <Button x:Name="AbilityToggle" Content="Toggle" HorizontalAlignment="Left" Margin="102,70,0,0" VerticalAlignment="Top" Width="25" FontSize="6" Click="AbilityToggle_Click" Height="21"/>
+                <Label Content="Attack:" HorizontalAlignment="Left" Margin="176,114,0,-34" VerticalAlignment="Top"/>
+                <Label x:Name="ItemAttack" Content="1d20 + 0" HorizontalAlignment="Left" Margin="224,115,0,-35" VerticalAlignment="Top"/>
+                <CheckBox x:Name="Proficient" Content="Proficient" HorizontalAlignment="Left" Margin="228,65,0,0" VerticalAlignment="Top" Checked="Proficient_CheckedChanged" Unchecked="Proficient_CheckedChanged"/>
                 <Label Content="Damage Type:" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="ItemDamageType" HorizontalAlignment="Left" Height="23" Margin="85,35,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="58" TextChanged="ItemDamageType_TextChanged"/>
-                <Label Content="Damage:" HorizontalAlignment="Left" Margin="151,32,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="DamageNumDice" HorizontalAlignment="Left" Height="23" Margin="210,35,0,0" TextWrapping="NoWrap" Text="1" VerticalAlignment="Top" Width="14" TextChanged="DamageNumDice_TextChanged"/>
-                <Label Content="d" HorizontalAlignment="Left" Margin="224,31,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="DamageDice" HorizontalAlignment="Left" Height="23" Margin="241,35,0,0" TextWrapping="NoWrap" Text="4" VerticalAlignment="Top" Width="21" TextChanged="DamageDice_TextChanged"/>
-                <Label x:Name="DamageBonus" Content="+ 0" HorizontalAlignment="Left" Margin="265,32,0,0" VerticalAlignment="Top"/>
-                <Label Content="Range:" HorizontalAlignment="Left" Margin="3,64,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="ItemRange" HorizontalAlignment="Left" Height="23" Margin="49,68,0,0" TextWrapping="NoWrap" Text="0" VerticalAlignment="Top" Width="36" TextChanged="ItemRange_TextChanged"/>
-
+                <Label Content="Damage:" HorizontalAlignment="Left" Margin="165,88,0,-8" VerticalAlignment="Top"/>
+                <TextBox x:Name="DamageNumDice" HorizontalAlignment="Left" Height="23" Margin="224,91,0,-8" TextWrapping="NoWrap" Text="1" VerticalAlignment="Top" Width="14" TextChanged="DamageNumDice_TextChanged"/>
+                <Label Content="d" HorizontalAlignment="Left" Margin="238,87,0,-7" VerticalAlignment="Top"/>
+                <TextBox x:Name="DamageDice" HorizontalAlignment="Left" Height="23" Margin="255,91,0,-8" TextWrapping="NoWrap" Text="4" VerticalAlignment="Top" Width="21" TextChanged="DamageDice_TextChanged"/>
+                <Label x:Name="DamageBonus" Content="+ 0" HorizontalAlignment="Left" Margin="279,88,0,-8" VerticalAlignment="Top"/>
+                <Label Content="Range:" HorizontalAlignment="Left" Margin="3,101,0,-21" VerticalAlignment="Top"/>
+                <TextBox x:Name="ItemRange" HorizontalAlignment="Left" Height="23" Margin="49,105,0,-22" TextWrapping="NoWrap" Text="0" VerticalAlignment="Top" Width="36" TextChanged="ItemRange_TextChanged"/>
+                <Image x:Name="WeaponImage" HorizontalAlignment="Left" Height="76" Margin="218,-22,0,0" VerticalAlignment="Top" Width="80" Source="WeaponIcons/swords/nw_t_02.PNG"/>
+                <Button x:Name="WeaponImageButton" Style ="{StaticResource invisHover}"  Content="Change" HorizontalAlignment="Left" Margin="218,-22,0,0" VerticalAlignment="Top" Width="80" Height="76" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="WeaponImageButton_Click"/>
             </Grid>
-            <Grid x:Name="ArmorGrid" HorizontalAlignment="Left" Height="100" Margin="17,75,0,0" VerticalAlignment="Top" Width="308" Visibility="Hidden">
-                <Label Content="Armor Class:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox x:Name="ArmorClassBox" HorizontalAlignment="Left" Height="23" Margin="76,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45" TextChanged="ArmorClassBox_TextChanged"/>
+            
+            <Grid x:Name="ArmorGrid" HorizontalAlignment="Left" Height="100" Margin="17,75,0,0" VerticalAlignment="Top" Width="308" Visibility="Visible">
+                <Label Content="Armor Class:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,27,0,0"/>
+                <TextBox x:Name="ArmorClassBox" HorizontalAlignment="Left" Height="23" Margin="76,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45" TextChanged="ArmorClassBox_TextChanged"/>
                 <CheckBox x:Name="EquippedBox" Content="Equipped" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Checked="EquippedBox_Checked" Unchecked="EquippedBox_Checked"/>
+                <Image x:Name="ArmorImage" HorizontalAlignment="Left" Height="76" Margin="218,-30,0,0" VerticalAlignment="Top" Width="80" Source="WeaponIcons/swords/nw_t_02.PNG"/>
+                <Button x:Name="ArmorImageButton" Style ="{StaticResource invisHover}"  Content="Change" HorizontalAlignment="Left" Margin="218,-30,0,0" VerticalAlignment="Top" Width="80" Height="76" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="ArmorImageButton_Click"/>
+
             </Grid>
         </Grid>
         <Button x:Name="ExitButton" Style="{StaticResource invisHover}" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="65" Click="ExitButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="10,344,0,0">

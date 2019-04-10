@@ -164,7 +164,8 @@ namespace CharacterManager
                         int iDmgDice = Convert.ToInt16(dmg[1]);
                         int iRange = Convert.ToInt16(reader.ReadLine());
                         bool iProf = Convert.ToBoolean(reader.ReadLine());
-                        Weapon w = new Weapon(iName, iInfo, iWeight, iAbility, iDamageType, iNumDice, iDmgDice, iRange, iProf);
+                        string iWeaponImage = reader.ReadLine();
+                        Weapon w = new Weapon(iName, iInfo, iWeight, iAbility, iDamageType, iNumDice, iDmgDice, iRange, iProf, iWeaponImage);
                         items.Add(w);
                     }
                     else if(type == "Armor")

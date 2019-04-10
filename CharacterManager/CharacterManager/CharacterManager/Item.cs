@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace CharacterManager
         protected string type;
         public string info;
         public int weight;
+        public string weaponIcon;
 
         public abstract override string ToString();
         public string getType()
@@ -30,7 +32,6 @@ namespace CharacterManager
         protected int dmgBonus;
         protected int atkBonus;
         public int range;
-
         protected string ability; //The associated score - Dexterity or Strength.
         public string damageType;
 
@@ -50,9 +51,10 @@ namespace CharacterManager
             atkBonus = 0;
             range = 0;
             isProficient = false;
+            weaponIcon = "WeaponIcons\\swords\\sv_t_09.PNG";
         }
 
-        public Weapon(string n, string i, int we, string ab, string dt, int ndd, int dd, int r, bool ip)
+        public Weapon(string n, string i, int we, string ab, string dt, int ndd, int dd, int r, bool ip, string wi)
         {
             name = n;
             type = "Weapon";
@@ -64,6 +66,7 @@ namespace CharacterManager
             dmgDice = dd;
             range = r;
             isProficient = ip;
+            weaponIcon = wi;
         }
 
         public void changeAbility()
@@ -149,15 +152,16 @@ namespace CharacterManager
         public override string toSaveString()
         {
             string saveString = "";
-            saveString += type + "\n";
-            saveString += name + "\n";
-            saveString += info + "\n";
-            saveString += weight + "\n";
-            saveString += ability + "\n";
-            saveString += damageType + "\n";
-            saveString += numDmgDice + "d" + dmgDice + "\n";
-            saveString += range + "\n";
-            saveString += isProficient + "\n";
+            saveString += type + "\r\n";
+            saveString += name + "\r\n";
+            saveString += info + "\r\n";
+            saveString += weight + "\r\n";
+            saveString += ability + "\r\n";
+            saveString += damageType + "\r\n";
+            saveString += numDmgDice + "d" + dmgDice + "\r\n";
+            saveString += range + "\r\n";
+            saveString += isProficient + "\r\n";
+            saveString += weaponIcon + "\r\n";
 
             return saveString;
         }

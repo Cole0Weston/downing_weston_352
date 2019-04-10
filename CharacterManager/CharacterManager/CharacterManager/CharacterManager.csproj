@@ -262,5 +262,11 @@
   <ItemGroup>
     <Resource Include="GUI_Assets\spellbook.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WeaponIcons\swords\nw_t_02.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WeaponIcons\swords\sv_t_09.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
