@@ -340,6 +340,7 @@ namespace CharacterManager
 
         //Initializes all skills and links them to their corresponding ability score.
         //There is probably a much shorter way to initialize all of these, but this seems semi-sensible.
+        //See the shorter method in SkillWindow.xaml.cs, it may not clean this up much.
         private void initializeSkills()
         {
             //STRENGTH SKILLS
@@ -402,6 +403,7 @@ namespace CharacterManager
             registerObserver(skills["Performance"]);
             registerObserver(skills["Persuasion"]);
 
+            //Ensuring that if a new character is created, skills will have their values initialized properly.
             foreach(Ability ability in abilities.Values)
             {
                 ability.setScore(10);
