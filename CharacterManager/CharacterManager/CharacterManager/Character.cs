@@ -45,6 +45,7 @@ namespace CharacterManager
         public string charClass;
         public string race;
         public string alignment;
+        public string featInfo;
 
         public string playerAvatar;
 
@@ -67,6 +68,7 @@ namespace CharacterManager
             charClass = "Class";
             race = "Race";
             alignment = "Alignment";
+            featInfo = "Feats and Languages";
             playerAvatar = ((Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 9)) + "PlayerIcons\\female\\f_07.PNG");            
             initializeAbilities();
             initializeSkills();
@@ -88,6 +90,9 @@ namespace CharacterManager
                 writer.WriteLine(currentHP);
                 writer.WriteLine(maxHP);
                 writer.WriteLine(playerAvatar.Substring(playerAvatar.Length - 28));
+                writer.WriteLine("BEGIN FEAT INFO");
+                writer.WriteLine(featInfo);
+                writer.WriteLine("END FEAT INFO");
                 //ABILITIES
                 foreach (KeyValuePair<string, Ability> a in abilities)
                 {
@@ -136,6 +141,14 @@ namespace CharacterManager
                 currentHP = Convert.ToInt16(reader.ReadLine());
                 maxHP = Convert.ToInt16(reader.ReadLine());
                 playerAvatar = (Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 10)) + reader.ReadLine();
+                featInfo = "";
+                reader.ReadLine();
+                string line = reader.ReadLine();
+                while(line != "END FEAT INFO")
+                {
+                    featInfo += line + "\n";
+                    line = reader.ReadLine();
+                }
 
                 foreach (KeyValuePair<string, Ability> a in abilities)
                 {

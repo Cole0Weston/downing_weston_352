@@ -45,6 +45,7 @@ namespace CharacterManager
                 CheckBox skillBox = skillpair.Value;
                 skillBox.IsChecked = curCharacter.getSkillProficiency(skillName);
             }
+            FeatBox.Text = curCharacter.featInfo;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -87,6 +88,14 @@ namespace CharacterManager
         {
             int value = curCharacter.getSkillValue(skill);
             return (value >= 0 ? "+" : "") + value; 
+        }
+
+        private void FeatBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (((TextBox)sender).Text != "Feats and Languages")
+            {
+                curCharacter.featInfo = ((TextBox)sender).Text;
+            }
         }
     }
 }

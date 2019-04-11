@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="SkillWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="ExitButton_Click"/>
-        <Grid HorizontalAlignment="Left" Height="399" Margin="114,10,0,0" VerticalAlignment="Top" Width="668">
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="ExitButton_Click" FontSize="16"/>
+        <Grid HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="518">
             <Grid HorizontalAlignment="Left" Height="60" Margin="33,10,0,0" VerticalAlignment="Top" Width="225">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -146,6 +146,7 @@
                 </Grid>
             </Grid>
         </Grid>
+        <TextBox x:Name="FeatBox" HorizontalAlignment="Left" Height="319" Margin="533,90,0,0" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Text="Feats and Languages" VerticalAlignment="Top" Width="249" FontSize="14" TextChanged="FeatBox_TextChanged"/>
 
     </Grid>
 </Window>
