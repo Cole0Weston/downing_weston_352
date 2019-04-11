@@ -34,6 +34,7 @@ namespace CharacterManager
             curCharacter = (Character)characterList[0];
             InventoryList.ItemsSource = curCharacter.items;
             WeaponGrid.Visibility = Visibility.Hidden;
+            ItemGrid.Visibility = Visibility.Hidden;
         }
 
         private void AddWeaponButton_Click(object sender, RoutedEventArgs e)
@@ -49,6 +50,7 @@ namespace CharacterManager
         private void AddMiscButton_Click(object sender, RoutedEventArgs e)
         {
             curCharacter.addItem("Misc");
+            ItemGrid.Visibility = Visibility.Visible;
         }
 
         private void InventoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -64,6 +66,7 @@ namespace CharacterManager
             ItemInfo.Text = curItem.info;
             if(curItem.getType() == "Weapon")
             {
+                ItemGrid.Visibility = Visibility.Visible;
                 WeaponGrid.Visibility = Visibility.Visible;
                 ItemAttack.Content = ((Weapon)curItem).getAttackRoll();
                 WeaponAbility.Content = "Ability: " + ((Weapon)curItem).getAbility();
@@ -77,6 +80,7 @@ namespace CharacterManager
             }
             else if(curItem.getType() == "Armor")
             {
+                ItemGrid.Visibility = Visibility.Visible;
                 ArmorGrid.Visibility = Visibility.Visible;
                 ArmorClassBox.Text = ((Armor)curItem).armorClass.ToString();
                 EquippedBox.IsChecked = ((Armor)curItem).equipped;
@@ -208,6 +212,8 @@ namespace CharacterManager
             //This seems to work properly if the curItem = null. It deletes nothing.
             curCharacter.items.Remove(curItem);
             InventoryList.Items.Refresh();
+            if(InventoryList.Items.Count == 0)
+                ItemGrid.Visibility = Visibility.Hidden;
         }
 
         private void WeaponImageButton_Click(object sender, RoutedEventArgs e)

@@ -55,7 +55,7 @@
                 <ImageBrush ImageSource="GUI_Assets/InventoryButtons/torchplus.PNG"/>
             </Button.Background>
         </Button>
-        <Grid HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="345" Opacity="0.99">
+        <Grid x:Name="ItemGrid" HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="345" Opacity="0.99">
             <Grid.Background>
                 <ImageBrush ImageSource="GUI_Assets/InventoryButtons/note.png"/>
             </Grid.Background>
