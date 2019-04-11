@@ -13,6 +13,14 @@ namespace CharacterManager
         int pBonus; //Bonus from character proficiency.
         bool isProficient; //Determines whether pBonus should be added.
 
+        public Skill()
+        {
+            value = 0;
+            aBonus = 0;
+            pBonus = 0;
+            isProficient = false;
+        }
+
         //Called when a character's ability scores are updated.
         public void UpdateA(int bonus)
         {
@@ -39,6 +47,11 @@ namespace CharacterManager
         public bool getProficiency()
         {
             return isProficient;
+        }
+
+        public int getBonus()
+        {
+            return value;
         }
     }
 }

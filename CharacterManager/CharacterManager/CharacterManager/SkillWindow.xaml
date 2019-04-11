@@ -1,0 +1,151 @@
+﻿<Window x:Class="CharacterManager.SkillWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CharacterManager"
+        mc:Ignorable="d"
+        Title="SkillWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="ExitButton_Click"/>
+        <Grid HorizontalAlignment="Left" Height="399" Margin="114,10,0,0" VerticalAlignment="Top" Width="668">
+            <Grid HorizontalAlignment="Left" Height="60" Margin="33,10,0,0" VerticalAlignment="Top" Width="225">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Strength" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="42" Width="215" Grid.RowSpan="1"/>
+                <CheckBox x:Name="AthleticsBox" Tag="Athletics" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                <Label Content="Athletics:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="148" Grid.Row="1"/>
+                <TextBlock x:Name="AthleticsBonus" Tag="Athletics" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="123" Margin="33,75,0,0" VerticalAlignment="Top" Width="225">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Dexterity" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="42" Width="215" Grid.RowSpan="1"/>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="1">
+                    <CheckBox x:Name="AcrobaticsBox" Tag="Acrobatics" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Acrobatics:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="AcrobaticsBonus" Tag="Acrobatics" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="2">
+                    <CheckBox x:Name="SleightOfHandBox" Tag="Sleight of Hand" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Sleight of Hand:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="SleightOfHandBonus" Tag="Sleight of Hand" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="3">
+                    <CheckBox x:Name="StealthBox" Tag="Stealth" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Stealth:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="StealthBonus" Tag="Stealth" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="196" Margin="33,203,0,0" VerticalAlignment="Top" Width="225">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Intelligence" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="42" Width="215" Grid.RowSpan="1"/>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="1">
+                    <CheckBox x:Name="ArcanaBox" Tag="Arcana" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Arcana:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="ArcanaBonus" Tag="Arcana" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="2">
+                    <CheckBox x:Name="HistoryBox" Tag="History" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="History:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="HistoryBonus" Tag="History" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="3">
+                    <CheckBox x:Name="InvestigationBox" Tag="Investigation" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Investigation:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="InvestigationBonus" Tag="Investigation" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="4">
+                    <CheckBox x:Name="NatureBox" Tag="Nature" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Nature:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="NatureBonus" Tag="Nature" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="5">
+                    <CheckBox x:Name="ReligionBox" Tag="Religion" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Religion:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="ReligionBonus" Tag="Religion" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="196" Margin="297,203,0,0" VerticalAlignment="Top" Width="225">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Wisdom" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="42" Width="215" Grid.RowSpan="1"/>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="1">
+                    <CheckBox x:Name="AnimalHandlingBox" Tag="Animal Handling" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Animal Handling:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="AnimalHandlingBonus" Tag="Animal Handling" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="2">
+                    <CheckBox x:Name="InsightBox" Tag="Insight" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Insight:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="InsightBonus" Tag="Insight" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="3">
+                    <CheckBox x:Name="MedicineBox" Tag="Medicine" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Medicine:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="MedicineBonus" Tag="Medicine" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="4">
+                    <CheckBox x:Name="PerceptionBox" Tag="Perception" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Perception:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="PerceptionBonus" Tag="Perception" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="5">
+                    <CheckBox x:Name="SurvivalBox" Tag="Survival" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Survival:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="SurvivalBonus" Tag="Survival" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="188" Margin="297,10,0,0" VerticalAlignment="Top" Width="225">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Charisma" HorizontalAlignment="Left" Margin="0,-6,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="42" Width="215" Grid.RowSpan="1"/>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="1">
+                    <CheckBox x:Name="DeceptionBox" Tag="Deception" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Deception:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="DeceptionBonus" Tag="Deception" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="2">
+                    <CheckBox x:Name="IntimidationBox" Tag="Intimidation" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Intimidation:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="IntimidationBonus" Tag="Intimidation" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="3">
+                    <CheckBox x:Name="PerformanceBox" Tag="Performance" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Performance:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="PerformanceBonus" Tag="Performance" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="36" Margin="0,0,0,0" VerticalAlignment="Top" Width="225" Grid.Row="4">
+                    <CheckBox x:Name="PersuasionBox" Tag="Persuasion" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="15" Width="16" Checked="ProficiencyBox_Checked" Unchecked="ProficiencyBox_Checked"/>
+                    <Label Content="Persuasion:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Grid.Row="0" Width="148"/>
+                    <TextBlock x:Name="PersuasionBonus" Tag="Persuasion" HorizontalAlignment="Left" Margin="184,4,0,0" Grid.Row="0" TextWrapping="Wrap" Text="+0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="24" Width="31"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

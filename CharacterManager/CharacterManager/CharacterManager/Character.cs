@@ -250,6 +250,21 @@ namespace CharacterManager
             updatePerception();
         }
 
+        public void setSkillProficiency(string skill, bool isProf)
+        {
+            skills[skill].setProficiency(isProf);
+        }
+
+        public int getSkillValue(string skill)
+        {
+            return skills[skill].getBonus();
+        }
+        
+        public bool getSkillProficiency(string skill)
+        {
+            return skills[skill].getProficiency();
+        }
+
         public void updatePerception()
         {
             perception = 10 + getAbilityBonus("Wisdom");
@@ -386,6 +401,12 @@ namespace CharacterManager
             registerObserver(skills["Intimidation"]);
             registerObserver(skills["Performance"]);
             registerObserver(skills["Persuasion"]);
+
+            foreach(Ability ability in abilities.Values)
+            {
+                ability.setScore(10);
+                updateProficiencyBonus();
+            }
         }
     }
 }

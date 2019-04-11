@@ -62,6 +62,9 @@
     </Compile>
     <Compile Include="Item.cs" />
     <Compile Include="Skill.cs" />
+    <Compile Include="SkillWindow.xaml.cs">
+      <DependentUpon>SkillWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Spell.cs" />
     <Compile Include="SpellWindow.xaml.cs">
       <DependentUpon>SpellWindow.xaml</DependentUpon>
@@ -85,6 +88,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SkillWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SpellWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

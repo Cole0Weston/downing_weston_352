@@ -254,6 +254,13 @@ namespace CharacterManager
             this.Close();
         }
 
+        private void SkillButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window newWindow = new SkillWindow(characterList);
+            newWindow.Show();
+            this.Close();
+        }
+
         //Can we use this to make level up/down easier?
         /*
         <Button x:Name="LevelDown" Style="{StaticResource invisHover}" Content="-" HorizontalAlignment="Left" Margin="870,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="38.5" Height="77" FontSize="24" FontWeight="Bold"/>
