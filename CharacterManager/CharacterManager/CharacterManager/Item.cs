@@ -13,7 +13,7 @@ namespace CharacterManager
         protected string type;
         public string info;
         public int weight;
-        public string weaponIcon;
+        public string itemIcon;
 
         public abstract override string ToString();
         public string getType()
@@ -51,7 +51,7 @@ namespace CharacterManager
             atkBonus = 0;
             range = 0;
             isProficient = false;
-            weaponIcon = "WeaponIcons\\swords\\sv_t_09.PNG";
+            itemIcon = "\\WeaponIcons\\swords\\sv_t_09.PNG";
         }
 
         public Weapon(string n, string i, int we, string ab, string dt, int ndd, int dd, int r, bool ip, string wi)
@@ -66,7 +66,7 @@ namespace CharacterManager
             dmgDice = dd;
             range = r;
             isProficient = ip;
-            weaponIcon = wi;
+            itemIcon = wi;
         }
 
         public void changeAbility()
@@ -161,7 +161,7 @@ namespace CharacterManager
             saveString += numDmgDice + "d" + dmgDice + "\r\n";
             saveString += range + "\r\n";
             saveString += isProficient + "\r\n";
-            saveString += weaponIcon + "\r\n";
+            saveString += itemIcon + "\r\n";
 
             return saveString;
         }
@@ -171,7 +171,7 @@ namespace CharacterManager
     {
         public int armorClass;
         public bool equipped;
-
+        
         public Armor()
         {
             name = "New Armor";
@@ -180,9 +180,10 @@ namespace CharacterManager
             weight = 0;
             armorClass = 0;
             equipped = false;
+            itemIcon = "\\ArmorIcons\\armor\\arm_t_02.PNG";
         }
 
-        public Armor(string n, string i, int w, int ac, bool eq)
+        public Armor(string n, string i, int w, int ac, bool eq, string aI)
         {
             name = n;
             type = "Armor";
@@ -190,6 +191,8 @@ namespace CharacterManager
             weight = w;
             armorClass = ac;
             equipped = eq;
+            itemIcon = aI;
+
         }
 
         public override string ToString()
@@ -200,12 +203,13 @@ namespace CharacterManager
         public override string toSaveString()
         {
             string saveString = "";
-            saveString += type + "\n";
-            saveString += name + "\n";
-            saveString += info + "\n";
-            saveString += weight + "\n";
-            saveString += armorClass + "\n";
-            saveString += equipped + "\n";
+            saveString += type + "\r\n";
+            saveString += name + "\r\n";
+            saveString += info + "\r\n";
+            saveString += weight + "\r\n";
+            saveString += armorClass + "\r\n";
+            saveString += equipped + "\r\n";
+            saveString += itemIcon + "\r\n";
 
             return saveString;
         }

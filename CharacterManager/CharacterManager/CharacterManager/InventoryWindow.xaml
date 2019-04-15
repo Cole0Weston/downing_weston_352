@@ -22,7 +22,7 @@
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#9c9d9e"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Foreground" Value="White"/>
                                 <Setter Property="Opacity" Value= ".5"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -55,7 +55,7 @@
                 <ImageBrush ImageSource="GUI_Assets/InventoryButtons/torchplus.PNG"/>
             </Button.Background>
         </Button>
-        <Grid x:Name="ItemGrid" HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="345" Opacity="0.99">
+        <Grid x:Name="ItemGrid" HorizontalAlignment="Left" Height="302" Margin="455,58,-8,0" VerticalAlignment="Top" Width="345" Opacity="0.99">
             <Grid.Background>
                 <ImageBrush ImageSource="GUI_Assets/InventoryButtons/note.png"/>
             </Grid.Background>
@@ -82,16 +82,19 @@
                 <Label x:Name="DamageBonus" Content="+ 0" HorizontalAlignment="Left" Margin="279,88,0,-8" VerticalAlignment="Top"/>
                 <Label Content="Range:" HorizontalAlignment="Left" Margin="3,101,0,-21" VerticalAlignment="Top"/>
                 <TextBox x:Name="ItemRange" HorizontalAlignment="Left" Height="23" Margin="49,105,0,-22" TextWrapping="NoWrap" Text="0" VerticalAlignment="Top" Width="36" TextChanged="ItemRange_TextChanged"/>
-                <Image x:Name="WeaponImage" HorizontalAlignment="Left" Height="76" Margin="218,-22,0,0" VerticalAlignment="Top" Width="80" Source="WeaponIcons/swords/nw_t_02.PNG"/>
-                <Button x:Name="WeaponImageButton" Style ="{StaticResource invisHover}"  Content="Change" HorizontalAlignment="Left" Margin="218,-22,0,0" VerticalAlignment="Top" Width="80" Height="76" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="WeaponImageButton_Click"/>
+                <Image x:Name="WeaponImage" HorizontalAlignment="Left" Height="76" Margin="218,-22,0,0" VerticalAlignment="Top" Width="80" Source="bin/Debug/WeaponIcons/swords/nw_t_02.PNG"/>
+                <Button x:Name="WeaponImageButton" Style ="{StaticResource invisHover}" Content="Change" HorizontalAlignment="Left" Margin="218,-22,0,0" VerticalAlignment="Top" Width="80" Height="76" BorderBrush="{x:Null}" Click="WeaponImageButton_Click" FontSize="22" FontWeight="Bold"/>
             </Grid>
-            
+
             <Grid x:Name="ArmorGrid" HorizontalAlignment="Left" Height="100" Margin="17,75,0,0" VerticalAlignment="Top" Width="308" Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
                 <Label Content="Armor Class:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,27,0,0"/>
                 <TextBox x:Name="ArmorClassBox" HorizontalAlignment="Left" Height="23" Margin="76,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="45" TextChanged="ArmorClassBox_TextChanged"/>
                 <CheckBox x:Name="EquippedBox" Content="Equipped" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Checked="EquippedBox_Checked" Unchecked="EquippedBox_Checked"/>
-                <Image x:Name="ArmorImage" HorizontalAlignment="Left" Height="76" Margin="218,-30,0,0" VerticalAlignment="Top" Width="80" Source="WeaponIcons/swords/nw_t_02.PNG"/>
-                <Button x:Name="ArmorImageButton" Style ="{StaticResource invisHover}"  Content="Change" HorizontalAlignment="Left" Margin="218,-30,0,0" VerticalAlignment="Top" Width="80" Height="76" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="ArmorImageButton_Click"/>
+                <Image x:Name="ArmorImage" HorizontalAlignment="Left" Height="76" Margin="218,-30,0,0" VerticalAlignment="Top" Width="80" />
+                <Button x:Name="ArmorImageButton" Style ="{StaticResource invisHover}" Content="Change" HorizontalAlignment="Left" Margin="218,-30,0,0" VerticalAlignment="Top" Width="80" Height="76" BorderBrush="{x:Null}" Click="ArmorImageButton_Click" FontSize="22" FontWeight="Bold"/>
 
             </Grid>
         </Grid>

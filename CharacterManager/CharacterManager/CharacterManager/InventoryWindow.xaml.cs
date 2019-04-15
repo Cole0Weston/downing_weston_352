@@ -76,7 +76,7 @@ namespace CharacterManager
                 DamageDice.Text = ((Weapon)curItem).dmgDice.ToString();
                 DamageBonus.Content = ((Weapon)curItem).getDamageBonus();
                 ItemRange.Text = ((Weapon)curItem).range.ToString();
-                WeaponImage.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory().Substring(0, Directory.GetCurrentDirectory().Length - 9)+((Weapon)curItem).weaponIcon));
+                WeaponImage.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + ((Weapon)curItem).itemIcon));
             }
             else if(curItem.getType() == "Armor")
             {
@@ -84,6 +84,7 @@ namespace CharacterManager
                 ArmorGrid.Visibility = Visibility.Visible;
                 ArmorClassBox.Text = ((Armor)curItem).armorClass.ToString();
                 EquippedBox.IsChecked = ((Armor)curItem).equipped;
+                ArmorImage.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + ((Armor)curItem).itemIcon));
             }
         }
 
@@ -220,9 +221,7 @@ namespace CharacterManager
         {
             //imagefilepath is the directory of user's selection. 
             var imagefilePath = string.Empty;
-            string path = Directory.GetCurrentDirectory();
-            // This is a possible solution to our defaulting directory problem. Will have to test on other machines.
-            path = path.Substring(0, path.Length - 9) + "WeaponIcons";
+            string path = (Directory.GetCurrentDirectory() + "\\WeaponIcons");
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = path;
             openFileDialog.Filter = "Weapon Icons (*.png)|*.png";
@@ -235,10 +234,8 @@ namespace CharacterManager
             {
                 imagefilePath = openFileDialog.FileName;
                 WeaponImage.Source = new BitmapImage(new Uri(imagefilePath));
-            }
-            if(curItem != null)
-            {
-                ((Weapon)curItem).weaponIcon = imagefilePath;
+                imagefilePath = imagefilePath.Substring(imagefilePath.Substring(0, imagefilePath.LastIndexOf("\\")).LastIndexOf("\\"));
+                ((Weapon)curItem).itemIcon = ("\\WeaponIcons" + imagefilePath);
             }
             
         }
@@ -247,9 +244,7 @@ namespace CharacterManager
         {
             //imagefilepath is the directory of user's selection. 
             var imagefilePath = string.Empty;
-            string path = Directory.GetCurrentDirectory();
-            // This is a possible solution to our defaulting directory problem. Will have to test on other machines.
-            path = path.Substring(0, path.Length - 9) + "ArmorIcons";
+            string path = (Directory.GetCurrentDirectory() + "\\ArmorIcons");
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = path;
             openFileDialog.Filter = "Armor Icons (*.png)|*.png";
@@ -262,10 +257,8 @@ namespace CharacterManager
             {
                 imagefilePath = openFileDialog.FileName;
                 ArmorImage.Source = new BitmapImage(new Uri(imagefilePath));
-            }
-            if (curItem != null)
-            {
-                //((Armor)curItem).armorIcon = imagefilePath;
+                imagefilePath = imagefilePath.Substring(imagefilePath.Substring(0, imagefilePath.LastIndexOf("\\")).LastIndexOf("\\"));
+                ((Armor)curItem).itemIcon = ("\\ArmorIcons" + imagefilePath);
             }
 
         }

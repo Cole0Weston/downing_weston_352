@@ -175,8 +175,9 @@ namespace CharacterManager
                         int iWeight = Convert.ToInt16(reader.ReadLine());
                         int iAC = Convert.ToInt16(reader.ReadLine());
                         bool iEquipped = Convert.ToBoolean(reader.ReadLine());
+                        string iArmorImage = reader.ReadLine();
 
-                        Armor a = new Armor(iName, iInfo, iWeight, iAC, iEquipped);
+                        Armor a = new Armor(iName, iInfo, iWeight, iAC, iEquipped, iArmorImage);
                         items.Add(a);
                     }
                     else if (type == "Misc")
