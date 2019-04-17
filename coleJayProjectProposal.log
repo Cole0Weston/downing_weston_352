@@ -1,0 +1,566 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.31)  16 APR 2019 18:38
+entering extended mode
+**./coleJayProjectProposal.tex
+(coleJayProjectProposal.tex
+LaTeX2e <2018-12-01>
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ieeetran\IEEEtran.
+cls"
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count80
+\@IEEEtrantmpcountB=\count81
+\@IEEEtrantmpcountC=\count82
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using IEEE Computer Society mode.
+** ATTENTION: Single column mode is not typically used with IEEE publications.
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.01874> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5.01874> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.02625> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7.02625> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8.03> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.03749> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.03749> not available
+
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11.04124> not available
+
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12.045> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.06374> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17.06374> not available
+
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.075> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20.075> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.09> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24.09> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@IEEEsubequation=\count87
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count88
+\c@table=\count89
+\@IEEEeqnnumcols=\count90
+\@IEEEeqncolcnt=\count91
+\@IEEEsubeqnnumrollback=\count92
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count93
+\@IEEEquantizeboxA=\box27
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count94
+\@IEEEtranrubishbin=\box28
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
+sty"
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-
+hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-
+generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.
+sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\auxhook.s
+ty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions
+.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen126
+\Hy@linkcounter=\count95
+\Hy@pagecounter=\count96
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.de
+f"
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count97
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\hyperref.
+cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count98
+ ("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen127
+\Fld@menulength=\count99
+\Field@Width=\dimen128
+\Fld@charsize=\dimen129
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count100
+\c@Item=\count101
+\c@Hfootnote=\count102
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex.d
+ef"
+File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
+\Fld@listcount=\count103
+\c@bookmark@seq@number=\count104
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\rerunfile
+check.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip44
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
+sty"
+Package: enumitem 2019/01/14 v3.7 Customized lists
+\labelindent=\skip45
+\enit@outerparindent=\dimen130
+\enit@toks=\toks16
+\enit@inbox=\box29
+\enit@count@id=\count105
+\enitdp@description=\count106
+) ("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen131
+\Gin@req@width=\dimen132
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count107
+\float@exts=\toks17
+\float@box=\box30
+\@float@everytoks=\toks18
+\@floatcapt=\box31
+)
+(coleJayProjectProposal.aux
+
+LaTeX Warning: Label `tab:useCaseIndex' multiply defined.
+
+
+LaTeX Warning: Label `CharacterSheet' multiply defined.
+
+)
+\openout1 = `coleJayProjectProposal.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 378.
+LaTeX Font Info:    ... okay on input line 378.
+
+-- Lines per column: 58 (exact).
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring OFF on input line 378.
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
+ty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gettitl
+estring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count108
+)
+LaTeX Info: Redefining \ref on input line 378.
+LaTeX Info: Redefining \pageref on input line 378.
+LaTeX Info: Redefining \nameref on input line 378.
+ (coleJayProjectProposal.out) (coleJayProjectProposal.out)
+\@outlinefile=\write3
+\openout3 = `coleJayProjectProposal.out'.
+
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
+ii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen133
+\scratchbox=\box33
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen134
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks20
+)
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
+base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.st
+y"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 492.
+
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 492.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 492.
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+
+LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
+(Font)              using `OMS/ptm/m/n' instead on input line 492.
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <14.05249> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 492.
+LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <14.05249> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 492.
+LaTeX Font Info:    Calculating math sizes for size <14.05249> on input line 49
+2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.05249> on input line 492.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.83669> on input line 492.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.02625> on input line 492.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.83669> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 492.
+LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <9.03374> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 500.
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 500
+.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.03374> on input line 500.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6.32358> on input line 500.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.51686> on input line 500.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.32358> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 500.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.03749> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 538.
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 53
+8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.03749> on input line 538.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.0262> on input line 538.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.01874> on input line 538.
+<chrSheet.jpg, id=67, 1164.35pt x 1507.6325pt>
+File: chrSheet.jpg Graphic file (type jpg)
+<use chrSheet.jpg>
+Package pdftex.def Info: chrSheet.jpg  used on input line 651.
+(pdftex.def)             Requested size: 174.64496pt x 226.13512pt.
+[1{C:/Users/colew/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}pdfTeX warn
+ing (ext4): destination with the same identifier (name{figure.1}) has been alre
+ady used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.658 \item C
+             hoosing a design pattern to work with is going to be crucial. T...
+ <./chrSheet.jpg>]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 698.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8.03> on input line 698.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.62097> on input line 698.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.015> on input line 698.
+ [2pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.726 \end{enumerate}
+                     ]
+<FirstMoqup.png, id=87, 420.06938pt x 574.39594pt>
+File: FirstMoqup.png Graphic file (type png)
+<use FirstMoqup.png>
+Package pdftex.def Info: FirstMoqup.png  used on input line 776.
+(pdftex.def)             Requested size: 210.03418pt x 287.19725pt.
+
+Overfull \hbox (96.22316pt too wide) in paragraph at lines 776--777
+ [][] 
+ []
+
+<Mobile.png, id=89, 343.2825pt x 618.05907pt>
+File: Mobile.png Graphic file (type png)
+<use Mobile.png>
+Package pdftex.def Info: Mobile.png  used on input line 782.
+(pdftex.def)             Requested size: 137.31056pt x 247.21924pt.
+
+Overfull \hbox (23.49954pt too wide) in paragraph at lines 782--783
+ [][] 
+ []
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.824 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.824 
+       <./FirstMoqup.png> <./Mobile.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 828--831
+
+ []
+
+[4pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.831 \newpage
+              ]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 839.
+
+
+("C:\Users\colew\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+<ProjectUML.png, id=114, 1105.12875pt x 617.30624pt>
+File: ProjectUML.png Graphic file (type png)
+<use ProjectUML.png>
+Package pdftex.def Info: ProjectUML.png  used on input line 839.
+(pdftex.def)             Requested size: 552.56303pt x 308.65236pt.
+
+Overfull \hbox (46.67303pt too wide) in paragraph at lines 839--839
+[][]
+ []
+
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 987.
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.987 \end{document}
+                     <./ProjectUML.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 987.
+ (coleJayProjectProposal.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 987.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 987.
+Package rerunfilecheck Info: File `coleJayProjectProposal.out' has not changed.
+
+(rerunfilecheck)             Checksum: 49586C63A41BD1AF66E1ECF7073F910E;961.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 987.
+ ) 
+Here is how much of TeX's memory you used:
+ 6522 strings out of 492946
+ 103874 string characters out of 3126266
+ 199273 words of memory out of 3000000
+ 10323 multiletter control sequences out of 15000+200000
+ 46672 words of font info for 87 fonts, out of 3000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 28i,9n,28p,809b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/colew/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+}<C:/Users/colew/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Users/colew/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb><C:/Users/colew/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/colew/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/colew/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/colew/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on coleJayProjectProposal.pdf (5 pages, 1157260 bytes).
+PDF statistics:
+ 151 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+

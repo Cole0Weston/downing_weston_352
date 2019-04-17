@@ -384,7 +384,7 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %File name goes here: Change for every lab!
-\title{Dungeons \& Dragons® 5e Campaign Assistant\\ for UTM CSCI 352 Spring 2019}
+\title{Dungeons \& Dragons® 5e Campaign Assistant}
 %
 %
 % author names and IEEE memberships
@@ -644,21 +644,21 @@ The popular table-top game, Dungeons \& Dragons®, is very complex and requires 
 
 \subsection{Background}
 
-A table-top adventure game, such as Dungeons \& Dragons®, is played using a large quantity of paper. Every player has a \textit{character sheet} containing information about a player's character, an \textit{inventory sheet} containing information about a character's inventory and equipment, and a \textit{spell sheet} containing the list of spells and abilities each character has access to. A player must also use paper to make story notes and record enemy positions during \textit{encounters} (fights). There are many different classes and races that players must choose from when making their character. Because of this, the skills and inventories of every player is uniquely constructed. 
+A table-top adventure game, such as Dungeons \& Dragons®, is played using a large quantity of paper. Every player has a \textit{character sheet} containing information about a player's character, an \textit{inventory sheet} containing information about a character's inventory and equipment, and a \textit{spell sheet} containing the list of spells and abilities each character has access to. A player must also use paper to make story notes and record enemy positions during \textit{encounters} (fights). There are many different classes and races that players must choose from when making their character. Because of this, the skills and inventories of every player are uniquely constructed. 
 The decision to create a new character management application was born from our shared annoyance with the time-consuming tediousness of sorting and sifting through stacks of paper every time we play Dungeons \& Dragons®. We found ourselves spending more time managing our characters than we did playing the game. Our program aims to make Dungeons \& Dragons® less paper dependent. 
 \begin{figure}[h!]
 \label{CharacterSheet}
-\includegraphics[scale=.15]{chrSheet.jpg}
+\centering\includegraphics[scale=.15]{chrSheet.jpg}
 \caption{Blank Character Sheet}
 \end{figure}
 
 \subsection{Challenges}
 \begin{itemize}[leftmargin=*]
 \item D\&D® 5e, while less complex than previous versions (see: D\&D® 3.5e), still has a massive degree of complexity in terms of interworking parts. Stats are affected by items, items affect stats, and there is simply a massive variety of permutations.
-\item Choosing a design pattern to work with is going to be crucial. It needs to be able to create a variety of items and item types.
-\item It must be able to implement search and sorting functions to find certain items quickly and with as few clicks as possible.
-\item Designing a save system for the game will require learning how to make a save system or, at the very least, require the program to read and write user information to/from a file using a consistent format. Either way, it will be challenging.
-\item Making an user friendly UI will be difficult due to our team's lack of experience with making UI's. Further research into graphic design might be for the best.
+\item Choosing a design pattern to work with is going to be crucial. The project needs to be able to create a variety of items and item types.
+\item The project must be able to implement search and sorting functions to find certain items quickly and with as few clicks as possible.
+\item Designing a save system for the program will require learning how to make a save system or, at the very least, require the program to read and write user information to/from a file using a consistent format. Either way, it will be challenging.
+\item Making an user friendly UI will be difficult. Working closely with those familiar with D\&D® will be useful in designing an intuitive UI. Further research into graphic design might be for the best.
 \end{itemize}
 
 \section{Scope}
@@ -672,8 +672,8 @@ The functional and non-functional requirements for this program are listed below
 \begin{itemize}
 \item User must be able to input and keep track of all relevant information present on standard D\&D® 5e character sheets \ref{CharacterSheet}.
 \item Program must properly manage player characters' inventories e.g. item weight, weapon statistics, and item value.
-\item Program must be able to write character sheet info to disk and subsequently load from such files.
-\item User must be able to create items following certain templates -- customizable gear is a staple of D\&D®.
+\item Program must be able to write character sheet info to disk and subsequently load them.
+\item User must be able to create customizable gear.
 \end{itemize}
 
 \subsubsection{Non-Functional}
@@ -685,9 +685,10 @@ The functional and non-functional requirements for this program are listed below
 
 \subsubsection{Stretch Goals}
 \begin{itemize}
+\item A ``campaign manager," or a system by which an entire party's sheets can be managed by the DM for record-keeping purposes.
 \item Separate permissions added for \textit{dungeon master}. -- It would be cool to see special DM only privileges for non-player character (NPC) inventory management.
 \item Inventory randomization for NPC stores, or generation of unique procedural items.
-\item A "campaign manager," or a system by which an entire party's sheets can be managed by the DM for record-keeping purposes.
+
 \end{itemize}
 
 \subsection{Use Cases}
@@ -700,7 +701,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline \hline
 1 & Create a new character & User & Med & 1\\
 \hline
-2 & Edit existing character & User & Med & 1\\
+2 & Load existing character & User & Med & 1\\
 \hline
 3 & Save the current character & User & Low & 2\\
 \hline
@@ -714,7 +715,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \begin{itemize}
 \item[Use Case Number:] 1
 \item[Use Case Name:] Create a new character
-\item[Description:] User has opened the program and needs to create a new character sheet. They will click the ``Create New Character" option upon opening the program. This will create a blank character sheet.
+\item[Description:] User has opened the program and needs to create a new character sheet. 
 \end{itemize}
 
 \begin{enumerate}
@@ -726,7 +727,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 \item[Use Case Number:] 2
-\item[Use Case Name:] Edit existing character
+\item[Use Case Name:] Load existing character
 \item[Description:] User has opened the program and needs to edit an existing character sheet. They will click the ``Load Existing Character" option upon opening the program. This should open an existing character sheet from disk in a new tab. 
 \end{itemize}
 
@@ -762,11 +763,31 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 
 \subsection{Interface Mockups}
-\begin{figure}[h]
-\includegraphics[scale=.4]{interface-mockup.png}
-\caption{Potential Interface}
-\label{CharacterSheetPage}
+\begin{figure}[H]
+%	\hspace{0cm}
+%	\begin{minipage}[t]{4cm}
+%		\centering
+%		\includegraphics[scale=0.4]{interface-mockup.png}
+%		\caption{Mockup 3}
+%	\end{minipage}
+	\centering
+	\begin{minipage}[t]{4cm}
+		\centering
+		\includegraphics[scale=0.5]{FirstMoqup.png}
+		\caption{Mockup 1}
+	\end{minipage}
+	\hspace{3cm}
+	\begin{minipage}[t]{4cm}
+		\centering
+		\includegraphics[scale=0.4]{Mobile.png}
+		\caption{Mockup 2}
+	\end{minipage}
 \end{figure}
+%\begin{figure}[h]
+%\includegraphics[scale=.4]{interface-mockup.png}
+%\caption{Potential Interface}
+%\label{CharacterSheetPage}
+%\end{figure}
 
 
 \section{Project Timeline}
@@ -787,7 +808,11 @@ Week & Date & Checkpoint & Plan to Meet Checkpoint \\
 \hline
 11 & 3/21/19 & Project Update and Demo Day & Project Timeline, Structure, and UML outline must be prepared, and program must be presented. \\
 \hline
+13 & 4/1/19 & Inventory functionality completion & Inventory should be able to create weapons, armor, and equipment. \\
+\hline
 14 & 4/7/19 & Save and Load character functions completion & Project should be able to load and save character information. This should be a simple read/write from/to file. \\ 
+\hline
+15 & 4/16/19 & Penultimate Writeup and Demo Day & Project proposal should be pretty much done. \\
 \hline
 16 & 4/25/19 & Project completion & Project must be completed by this date. That means that program must be be able to, at minimum, create and load character sheets successfully. Program will be able to edit spells and attributes.  \\
 
@@ -797,16 +822,17 @@ Week & Date & Checkpoint & Plan to Meet Checkpoint \\
 \label{tab:useCaseIndex}
 \end{table}
 
+As a team, our time management skills were well balanced. We set clear goals for ourselves and have met them within the time frame we estimated. There was some panic over time when a teammate didn't realize what `penultimate' meant, but, other than that hiccup, time management went smoothly. 
 
 \section{Project Structure}
 The structure of the project centers around a list of Character objects (one of which is active at any given time), to be passed between the various Windows of the program. Each individual Character object contains all information which would be maintained within a standard D\&D 5e character sheet - most importantly a list of ability scores, skill values, inventory items, and spells. Logic for the calculation of many of these items is contained within the Character class, and the main purpose of each Window is to display these attributes in an easily digestable form.\\
 For example, ability bonuses and skill values will not be directly accessible by the end user, but rather are internally maintained and calculated by the logic within the Character class (using the pertinent logic from the Player's Handbook which would generally be calculated by hand.)\\
-Several fields (e.g. Feats, Abilities, etc.) will simply be text fields with arbitrary contents, to be freely edited by the end user. This is to allow for the greatest degree of flexibility in using the character manager - facets of D\&D such as these are often not cut-and-dry enough to easily facilitate a better method of organization.\\
-
+Several fields (e.g. Feats, Abilities, etc.) will simply be text fields with arbitrary contents, to be freely edited by the end user. This is to allow for the greatest degree of flexibility in using the character manager -- facets of D\&D such as these are often not cut-and-dry enough to easily facilitate a better method of organization.\\
+\newpage
 \subsection{UML Outline}
 \texttt{
 \begin{figure}[H]
-\includegraphics[scale=.33]{ProjectUML.png}
+\includegraphics[scale=.5]{ProjectUML.png}
 \caption{Project UML}
 \label{CharacterSheet}
 \end{figure}
@@ -814,15 +840,18 @@ Several fields (e.g. Feats, Abilities, etc.) will simply be text fields with arb
 
 
 \subsection{Design Patterns Used}
-Observer - Both the ProficiencyObserver and AbilityObserver classes are implementations of the Observer pattern, and are used to keep ability bonuses, skill values, and so forth in sync.
+Observer -- Both the ProficiencyObserver and AbilityObserver classes are implementations of the Observer pattern, and are used to keep ability bonuses and skill values in sync.
 
 \section{Results}
-This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
+As a team, we have accomplished almost all of what we set out to do. We implemented all of our desired use cases. A more significant achievement was meeting all of our functional requirements. For all intents and purposes, the project allows the user to input and keep track of all relevant information present on a standard D\&D 5e character sheet. It also allows the user to create, save, and load different spells and equipment. The only non-functional requirement we did not meet was the ability to manage multiple character sheets simultaneously. We entertained the idea for a large portion of the development process, but it was dropped after feedback from testers deemed the feature unnecessary. As a bonus, the team added player avatars, armor icons, and weapon icons. 
+%This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
 
 \subsection{Future Work}
-Where are you going next with your project?
-For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
-By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
+If work on this project were to continue past project completion, further updates might include the implementation of our current stretch goals. Something that occurred to us fairly late in development was the idea of using a preexisting API to load possible spells to select from, rather than having the user make their own. 
+
+%Where are you going next with your project?
+%For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
+%By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
 
 
 
@@ -902,13 +931,13 @@ By the end, what do you plan on doing with this project?  Will you try to sell i
 %Make sure to reference any resource used aside from the lab itself!
 %(you can make a separate *.bib file if preferred, this just tends to be the quick and dirty approach)
 
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%
+%\end{thebibliography}
 
 % biography section
 % 
@@ -923,22 +952,22 @@ H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 
 %Ignore this for the lab
 
-\begin{IEEEbiography}{Michael Shell}
-Biography text here.
-\end{IEEEbiography}
-
-% if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
-
-% insert where needed to balance the two columns on the last page with
-% biographies
-%\newpage
-
-\begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+%
+%% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+%
+%% insert where needed to balance the two columns on the last page with
+%% biographies
+%%\newpage
+%
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing
 % a \vfill before or after them. The appropriate
