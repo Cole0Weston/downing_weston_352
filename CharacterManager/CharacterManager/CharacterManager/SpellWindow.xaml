@@ -6,9 +6,44 @@
         xmlns:local="clr-namespace:CharacterManager"
         mc:Ignorable="d"
         Title="SpellWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="invisHover" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="#FF5397D1" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#9c9d9e"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Opacity" Value= ".5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <ListBox x:Name="SpellList" HorizontalAlignment="Center" Height="302" Margin="89,58,350,59" VerticalAlignment="Center" Width="353" SelectionMode="Single" SelectionChanged="SpellList_SelectionChanged"/>
-        <Grid HorizontalAlignment="Left" Height="302" Margin="447,58,0,0" VerticalAlignment="Top" Width="335">
+        <Grid.Background>
+            <ImageBrush ImageSource="GUI_Assets/SpellBackground.png"/>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="312" Margin="89,58,0,0" VerticalAlignment="Top" Width="693" Source="GUI_Assets/book.png" Stretch="Fill">
+            <Image.Effect>
+                <DropShadowEffect/>
+            </Image.Effect>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="89" Margin="0,147,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot_02.PNG"/>
+        <Image HorizontalAlignment="Left" Height="89" Margin="0,58,0,0" VerticalAlignment="Top" Width="89" Source="GUI_Assets/InventoryButtons/slot_02.PNG"/>
+        <ListBox x:Name="SpellList" HorizontalAlignment="Center" Height="277" Margin="112,70,367,72" VerticalAlignment="Center" Width="313" SelectionMode="Single" SelectionChanged="SpellList_SelectionChanged" Foreground="Black" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <Grid HorizontalAlignment="Left" Height="302" Margin="430,58,0,0" VerticalAlignment="Top" Width="352">
             <Label Content="Name:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="SpellName" HorizontalAlignment="Left" Height="23" Margin="54,10,0,0" TextWrapping="NoWrap" Text="Spell Name" VerticalAlignment="Top" Width="256" TextChanged="SpellName_TextChanged"/>
             <Label Content="Type:" HorizontalAlignment="Left" Margin="206,38,0,0" VerticalAlignment="Top"/>
@@ -35,13 +70,25 @@
                 <TextBox x:Name="SpellDamageType" HorizontalAlignment="Left" Height="23" Margin="210,4,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="100" TextChanged="SpellDamageType_TextChanged"/>
             </Grid>
         </Grid>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="9,58,0,0" VerticalAlignment="Top" Width="75" Height="63" Click="ExitButton_Click"/>
-        <Button x:Name="NewDmgSpell" HorizontalAlignment="Left" Margin="9,126,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="NewDmgSpell_Click">
-            <TextBlock TextWrapping="Wrap" Text="New Damage Spell" HorizontalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="ExitButton" Style="{StaticResource invisHover}" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="65" Click="ExitButton_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="10,344,0,0">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/BackArrow.png" Stretch="UniformToFill"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="NewUtilSpell" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="NewUtilSpell_Click">
-            <TextBlock TextWrapping="Wrap" Text="New Utility Spell" HorizontalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="NewDmgSpell" Style="{StaticResource invisHover}" Content="New Damage Spell" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="65" Height="65" Click="NewDmgSpell_Click" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/spellDamage.png"/>
+            </Button.Background>
         </Button>
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="9,286,0,0" VerticalAlignment="Top" Width="75" Height="74" Click="DeleteButton_Click"/>
+        <Button x:Name="NewUtilSpell" Style="{StaticResource invisHover}" Content="New Utility Spell" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Width="65" Height="65" Click="NewUtilSpell_Click" BorderBrush="{x:Null}" >
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/spellUtility.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="DeleteButton" Style="{StaticResource invisHover}" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="59" Click="DeleteButton_Click" BorderBrush="{x:Null}" FontFamily="SimSun" FontSize="16" Foreground="#FFFFE3E3">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/button_02_blue.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

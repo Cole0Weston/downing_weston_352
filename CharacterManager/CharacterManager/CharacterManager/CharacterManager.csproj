@@ -665,5 +665,18 @@
     <Resource Include="bin\Debug\WeaponIcons\swords\swords_t_07.png" />
     <Resource Include="bin\Debug\WeaponIcons\swords\swords_t_08.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\cointhing.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\spellDamage.png" />
+    <Resource Include="GUI_Assets\spellUtility.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\SpellBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GUI_Assets\InventoryButtons\button_02_blue.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
