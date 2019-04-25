@@ -465,6 +465,7 @@
     <Resource Include="bin\Debug\WeaponIcons\throwing_weapons\m_t_04.png" />
     <Resource Include="bin\Debug\WeaponIcons\throwing_weapons\m_t_05.png" />
     <Resource Include="GUI_Assets\book.png" />
+    <Resource Include="GUI_Assets\notecrop.png" />
     <Resource Include="PlayerIcons\female\f_01.png" />
     <Resource Include="PlayerIcons\female\f_02.png" />
     <Resource Include="PlayerIcons\female\f_03.png" />

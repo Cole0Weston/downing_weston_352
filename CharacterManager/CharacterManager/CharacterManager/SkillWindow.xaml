@@ -6,8 +6,41 @@
         xmlns:local="clr-namespace:CharacterManager"
         mc:Ignorable="d"
         Title="SkillWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="invisHover" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" Background="{TemplateBinding Background}" BorderThickness="0" BorderBrush="#FF5397D1" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#9c9d9e"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Opacity" Value= ".5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="ExitButton_Click" FontSize="16"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="GUI_Assets/notecrop.png"/>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="350" Margin="528,85,0,-16" VerticalAlignment="Top" Width="264" Source="GUI_Assets/InventoryButtons/note.png"/>
+        <Button x:Name="ExitButton" Style="{StaticResource invisHover}" Content="Exit" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Height="75" Click="ExitButton_Click" FontSize="16" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="GUI_Assets/InventoryButtons/BackArrow.png"/>
+            </Button.Background>
+        </Button>
         <Grid HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="518">
             <Grid HorizontalAlignment="Left" Height="60" Margin="33,10,0,0" VerticalAlignment="Top" Width="225">
                 <Grid.RowDefinitions>
@@ -146,7 +179,7 @@
                 </Grid>
             </Grid>
         </Grid>
-        <TextBox x:Name="FeatBox" HorizontalAlignment="Left" Height="319" Margin="533,90,0,0" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Text="Feats and Languages" VerticalAlignment="Top" Width="249" FontSize="14" TextChanged="FeatBox_TextChanged"/>
+        <TextBox x:Name="FeatBox" HorizontalAlignment="Left" Height="273" Margin="543,136,0,0" AcceptsReturn="True" AcceptsTab="True" TextWrapping="Wrap" Text="Feats and Languages" VerticalAlignment="Top" Width="239" FontSize="14" TextChanged="FeatBox_TextChanged" Background="{x:Null}" BorderBrush="{x:Null}"/>
 
     </Grid>
 </Window>
